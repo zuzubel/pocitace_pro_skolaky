@@ -1,6 +1,14 @@
-/*header
+/*header*/
 
-
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #eac85e;
+  margin-top: 20px;
+}
 
 .header__left,
 .header__right {
@@ -10,59 +18,26 @@
   padding: 10px 20px;
 }
 
+.header__logo {
+  width: 4rem;
+  height: 4rem;
+  background-image: url('img/logo_pruhled.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: center;
+  margin: 15px;
+}
+
 .header__right {
   padding: 10px 0px;
 }
 
-.header__logo {
-  width: 5rem;
-  height: 5rem;
-  background-image: url('/img/logo_pruhled.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  align-items: center;
-}
-
-.header__atr-project,
-.header__atr-us {
-  font-size: 25px;
+.header__right a {
+  padding: 30px;
   text-decoration: none;
-  display: inline-block;
   color: black;
-  padding: 20px;
 }
 
-.header__atr-project:hover,
-.header__atr-us:hover {
-  font-weight: bold;
-}
-
-.header__name {
-  display: none;
-}
-
-.nav-closed {
-  display: none;
-}
-
-.nav-btn {
-  width: 3rem;
-  height: 3rem;
-  padding: 0 20px 0 0;
-  border: none;
-  background-image: url('/img/menu.png');
-  background-size: contain;
-  cursor: pointer;
-}
-*/
-
-.header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-items: center;
-}
-
-header {
-  font-family: Helvetica, Arial, sans-serif;
+.header__right a:hover {
+  text-decoration: underline;
 }
