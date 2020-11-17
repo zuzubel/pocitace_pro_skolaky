@@ -1,12 +1,15 @@
 /*header*/
 
+header {
+  background-color: #eac85e;
+}
+
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-items: center;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: #eac85e;
   margin-top: 20px;
 }
 
@@ -40,4 +43,21 @@
 
 .header__right a:hover {
   text-decoration: underline;
+}
+
+.opening {
+  font-size: 45px;
+  text-align: center;
+  height: 60vh;
+}
+
+.opening__par1 {
+  margin: 0 200px;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.opening__par2 {
+  margin: 0 200px;
+  font-style: italic;
 }
