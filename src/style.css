@@ -1,78 +1,8 @@
-/*header*/
-
-header {
-  background-color: #eac85e;
-  margin-bottom: -10vh;
+body {
+  margin: 0;
 }
 
-.header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-items: center;
-  font-family: Helvetica, Arial, sans-serif;
-  margin-top: 20px;
-}
 
-.header__left,
-.header__right {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  padding: 10px 20px;
-}
-
-.header__logo {
-  width: 5rem;
-  height: 5rem;
-  background-image: url('img/logo_pruhled.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  align-items: center;
-  margin: 15px;
-}
-
-.header__right {
-  padding: 10px 0px;
-}
-
-.header__right a {
-  padding: 30px;
-  text-decoration: none;
-  color: black;
-}
-
-.header__right a:hover {
-  text-decoration: underline;
-}
-
-.opening {
-  font-size: 45px;
-  text-align: center;
-  height: 60vh;
-}
-
-.opening__par1 {
-  margin: 0 200px;
-  padding-top: 80px;
-  padding-bottom: 20px;
-}
-
-.opening__par2 {
-  margin: 0 200px;
-  font-style: italic;
-}
-
-.for {
-  height: 50vh;
-}
-
-.for__donors {
-  background-image: url('img/for_donors.jpg');
-  background-size: cover;
-}
-
-.for__schools {
-  background-image: url('img/for_schools.jpg');
-  background-size: cover;
+/* responzivní design pro větší telefony a tablety */
+@media screen and (min-width: 361px) and (max-width: 768px) {
 }

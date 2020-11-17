@@ -1,0 +1,15 @@
+.for {
+  height: 50vh;
+}
+
+
+/* chceme ty fotky vložit přes background? Nemůže to být img? */
+/* .for__donors {
+  background-image: url('../img_components/for_donors.jpg');
+  background-size: cover;
+}
+
+.for__schools {
+  background-image: url('../img_components/for_schools.jpg');
+  background-size: cover;
+} */

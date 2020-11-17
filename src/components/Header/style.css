@@ -1,0 +1,124 @@
+header {
+  background-color: #eac85e;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  padding: 0 20px;
+}
+
+.nav-open {
+  position: absolute;
+  margin-right: -19px;
+  top: 100%;
+  background-color: black;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.nav__a {
+  font-size: 17px;
+  text-decoration: none;
+  display: block;
+  color: white;
+  padding: 20px;
+}
+
+.nav-closed {
+  display: none;
+}
+
+.nav-btn {
+  width: 3rem;
+  height: 3rem;
+  padding: 0 20px 0 0;
+  border: none;
+  background-color: inherit;
+  background-image: url('../img_components/menu_black.png');
+  background-size: contain;
+  cursor: pointer;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px 20px;
+}
+
+.header__logo {
+  width: 5rem;
+  height: 5rem;
+  background-image: url('../img_components/logo_pruhled.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: center;
+}
+
+/* je třeba změnit font weight na tlustčí,ale fuguje to jen z extrému do extrému. Zkusit stáhnout z google fonts */
+.opening {
+  font-size: 24px;
+  text-align: center;
+  height: 40vh;
+  padding: 0 13px;
+  margin: 0;
+  font-weight: normal;
+}
+
+.opening__projectName {
+  margin: 0;
+  padding-top: 45px;
+}
+
+.opening__projectSlogan {
+  margin: 0;
+  font-style: italic;
+}
+
+/* responzivní design pro desktop */
+@media screen and (min-width: 768px) {
+  .nav-open {
+    position: static;
+    margin: 0;
+  }
+
+  .nav-closed {
+    display: block;
+  }
+
+  .nav__a {
+    display: inline-block;
+    font-size: 17px;
+    color: black;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  .header__right {
+    padding: 10px 0px;
+  }
+
+  .header__right a {
+    padding: 30px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .header__right a:hover {
+    text-decoration: underline;
+  }
+}
