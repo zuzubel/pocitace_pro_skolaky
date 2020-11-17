@@ -2,6 +2,7 @@
 
 header {
   background-color: #eac85e;
+  margin-bottom: -10vh;
 }
 
 .header__container {
@@ -22,8 +23,8 @@ header {
 }
 
 .header__logo {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   background-image: url('img/logo_pruhled.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -60,4 +61,18 @@ header {
 .opening__par2 {
   margin: 0 200px;
   font-style: italic;
+}
+
+.for {
+  height: 50vh;
+}
+
+.for__donors {
+  background-image: url('img/for_donors.jpg');
+  background-size: cover;
+}
+
+.for__schools {
+  background-image: url('img/for_schools.jpg');
+  background-size: cover;
 }
