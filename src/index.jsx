@@ -6,7 +6,17 @@ import './style.css';
 render(
   <>
     <header>
-      <h1>React Starter</h1>
+      <div className="header__container">
+        <div className="header__left">
+          <div className="header__logo"></div>
+          <h1 className="header__name">Počítače pro školáky</h1>
+        </div>
+        <div className="header__right">
+          <a href="#">O projektu</a>
+          <a href="#">Chci darovat</a>
+          <a href="#">Potřebuji počítač</a>
+        </div>
+      </div>
     </header>
     <main>
       <p>Moje první React stránka</p>
