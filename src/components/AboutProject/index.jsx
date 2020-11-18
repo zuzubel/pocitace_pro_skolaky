@@ -4,7 +4,9 @@ import './style.css';
 export const AboutProject = () => {
   return (
     <>
-      <h1>Zkouška</h1>
+      <div className="aboutProject">
+        <h1>Zkouška</h1>
+      </div>
     </>
   );
 };
