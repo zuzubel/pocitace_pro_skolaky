@@ -5,9 +5,17 @@ export const For = () => {
   return (
     <div className="for">
       <div className="for__donors">
-        <img src="../img_components/for_donors.jpg" alt="" />
+        <div className="for__donors--foto"></div>
+        <a className="for__donors--a" href="#">
+          Chci pomoci
+        </a>
       </div>
-      <div className="for__schools"></div>
+      <div className="for__schools">
+        <div className="for__schools--foto"></div>
+        <a className="for__schools--a" href="#">
+          Potřebuji pomoc
+        </a>
+      </div>
     </div>
   );
 };
