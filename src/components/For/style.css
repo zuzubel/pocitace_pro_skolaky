@@ -25,10 +25,6 @@
   border-bottom: 3px solid white;
 }
 
-.for__donors--a:hover {
-  border-bottom: 3px solid #eac85e;
-}
-
 .for__schools {
   display: flex;
   flex-direction: column;
@@ -53,15 +49,16 @@
   border-bottom: 3px solid white;
 }
 
-.for__schools--a:hover {
-  border-bottom: 3px solid #eac85e;
-}
-
 @media screen and (min-width: 361px) and (max-width: 768px) {
 }
 /* tady budou už dvě fotky vedle sebe */
 
 @media screen and (min-width: 768px) {
+  .for {
+    display: flex;
+    flex-shrink: 0;
+  }
+
   .for__donors,
   .for__schools {
     flex-direction: column;
@@ -85,8 +82,11 @@
     font-size: 36px;
   }
 
-  .for {
-    display: flex;
-    flex-shrink: 0;
+  .for__donors--a:hover {
+    border-bottom: 3px solid #eac85e;
+  }
+
+  .for__schools--a:hover {
+    border-bottom: 3px solid #eac85e;
   }
 }
