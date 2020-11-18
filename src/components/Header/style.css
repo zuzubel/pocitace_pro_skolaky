@@ -19,6 +19,10 @@ header {
   padding: 0 20px;
 }
 
+.nav-row {
+  display: none;
+}
+
 .nav-column {
   position: absolute;
   margin-right: -19px;
@@ -34,10 +38,6 @@ header {
   display: block;
   color: white;
   padding: 20px;
-}
-
-.nav-row {
-  display: none;
 }
 
 .nav-btn {
@@ -71,7 +71,7 @@ header {
 .opening {
   font-size: 24px;
   text-align: center;
-  height: 35vh;
+  height: 280px;
   padding: 0 13px;
   margin: 0;
   font-weight: normal;
@@ -89,23 +89,21 @@ header {
 /* resp. design pro tablety */
 @media screen and (min-width: 420px) and (max-width: 768px) {
   .opening {
-    height: 40vh;
-    font-size: 5vw;
+    height: 300px;
+    font-size: 32px;
   }
 
   .opening__projectName {
     margin: 0;
-    padding-top: 110px;
+    padding-top: 65px;
   }
-
-
 }
 
 /* responzivní design pro desktop */
 @media screen and (min-width: 768px) {
   .opening {
     height: 60vh;
-    font-size: 4.5vw;
+    font-size: 48px;
   }
 
   .opening__projectName {
