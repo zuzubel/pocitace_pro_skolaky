@@ -104,8 +104,12 @@ header {
 /* responzivní design pro desktop */
 @media screen and (min-width: 768px) {
   .opening {
-    height: 50vh;
+    height: 60vh;
     font-size: 4.5vw;
+  }
+
+  .opening__projectName {
+    padding-top: 90px;
   }
 
   .nav-column {
