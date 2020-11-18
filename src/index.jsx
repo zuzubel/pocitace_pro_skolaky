@@ -4,6 +4,7 @@ import './index.html';
 import './style.css';
 import { Header } from './components/Header/index.jsx';
 import { For } from './components/For/index.jsx';
+import { AboutProject } from './components/AboutProject';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Header />
       <main>
         <For />
+        <AboutProject />
       </main>
       <footer>Czechitas</footer>
     </>
