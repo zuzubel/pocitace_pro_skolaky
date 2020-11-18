@@ -78,15 +78,21 @@ header {
 .opening__projectName {
   margin: 0;
   padding-top: 45px;
+  font-size: 51px;
 }
 
 .opening__projectSlogan {
   margin: 0;
   font-style: italic;
+  font-size: 51px;
 }
 
 /* responzivní design pro desktop */
 @media screen and (min-width: 768px) {
+.opening {
+  height: 60vh;
+}
+
   .nav-open {
     position: static;
     margin: 0;
