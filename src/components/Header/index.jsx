@@ -18,7 +18,7 @@ export const Header = () => {
             className="nav-btn"
             onClick={() => setBurger(!burger)}
           ></button>
-          <nav className={burger ? 'nav-open' : 'nav-closed'}>
+          <nav className={burger ? 'nav-column' : 'nav-row'}>
             <a className="nav__a"href="#" onClick={handleClick}>
               O projektu
             </a>
