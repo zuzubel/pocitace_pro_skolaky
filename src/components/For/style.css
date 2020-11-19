@@ -9,7 +9,7 @@
 
 .for__donors--foto {
   width: 90%vh;
-  height: 300px;
+  height: 280px;
   background-image: url('../img_components/for_donors.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,7 +25,7 @@
 
 .for__schools--foto {
   width: 90%vh;
-  height: 300px;
+  height: 280px;
   background-image: url('../img_components/for_schools.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,9 +50,42 @@
   border-bottom: 3px solid #eac85e;
 }
 
+/* tablety */
 @media screen and (min-width: 361px) and (max-width: 768px) {
+  .for {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .for__donors,
+  .for__schools {
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 100px;
+  }
+
+  .for__donors--foto,
+  .for__schools--foto {
+    width: 90%;
+    height: 350px;
+  }
+
+  .for__schools--foto {
+    margin-top: 0;
+  }
+
+  .for__schools--a,
+  .for__donors--a {
+    font-size: 32px;
+  }
+
+  .for__donors--a:hover,
+  .for__schools--a:hover {
+    border-bottom: 3px solid #eac85e;
+  }
 }
-/* tady budou už dvě fotky vedle sebe */
+
 
 @media screen and (min-width: 768px) {
   .for {
