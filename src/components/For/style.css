@@ -17,14 +17,6 @@
   margin: 0 30px 5px 30px;
 }
 
-.for__donors--a {
-  text-decoration: none;
-  font-size: 24px;
-  text-align: center;
-  color: black;
-  border-bottom: 3px solid white;
-}
-
 .for__schools {
   display: flex;
   flex-direction: column;
@@ -41,12 +33,21 @@
   margin: 30px 30px 5px 30px;
 }
 
-.for__schools--a {
+.for__schools--a,
+.for__donors--a {
   text-decoration: none;
   font-size: 24px;
   text-align: center;
   color: black;
   border-bottom: 3px solid white;
+  width: fit-content;
+  align-self: center;
+}
+
+
+.for__donors--a:hover,
+.for__schools--a:hover {
+  border-bottom: 3px solid #eac85e;
 }
 
 @media screen and (min-width: 361px) and (max-width: 768px) {
@@ -82,10 +83,7 @@
     font-size: 36px;
   }
 
-  .for__donors--a:hover {
-    border-bottom: 3px solid #eac85e;
-  }
-
+  .for__donors--a:hover,
   .for__schools--a:hover {
     border-bottom: 3px solid #eac85e;
   }
