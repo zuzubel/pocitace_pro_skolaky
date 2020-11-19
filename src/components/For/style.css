@@ -39,11 +39,10 @@
   font-size: 24px;
   text-align: center;
   color: black;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid transparent;
   width: fit-content;
   align-self: center;
 }
-
 
 .for__donors--a:hover,
 .for__schools--a:hover {

@@ -4,7 +4,7 @@ import './style.css';
 export const Header = () => {
   const [burger, setBurger] = useState(false);
 
-  const handleClick = () => setBurger(!burger);
+  const handleClick = () => setBurger(false);
 
   return (
     <header>
@@ -19,16 +19,16 @@ export const Header = () => {
             onClick={() => setBurger(!burger)}
           ></button>
           <nav className={burger ? 'nav-column' : 'nav-row'}>
-            <a className="nav__a"href="#" onClick={handleClick}>
+            <a className="nav__a" href="#" onClick={handleClick}>
               O projektu
             </a>
-            <a className="nav__a"href="#" onClick={handleClick}>
+            <a className="nav__a" href="#" onClick={handleClick}>
               Chci darovat
             </a>
-            <a className="nav__a"href="#" onClick={handleClick}>
+            <a className="nav__a" href="#" onClick={handleClick}>
               Potřebuji počítač
             </a>
-            <a className="nav__a"href="#" onClick={handleClick}>
+            <a className="nav__a" href="#" onClick={handleClick}>
               Kontakt
             </a>
           </nav>
