@@ -1,3 +1,7 @@
+body{
+  position: relative;
+}
+
 header {
   background-color: #eac85e;
   margin-bottom: -10vh;
@@ -8,7 +12,9 @@ header {
   justify-content: space-between;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
+  background-color: rgba(241, 242, 242, 1);
+  position: fixed;
+  width: 100%;
 }
 
 .header__right {
@@ -36,7 +42,7 @@ header {
   font-size: 17px;
   text-decoration: none;
   display: block;
-  color: white;
+  color: rgb(244, 245, 245);
   padding: 20px;
 }
 
@@ -59,8 +65,8 @@ header {
 }
 
 .header__logo {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   background-image: url('../img_components/logo_pruhled.png');
   background-repeat: no-repeat;
   background-size: contain;
