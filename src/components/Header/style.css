@@ -94,10 +94,10 @@ header {
 }
 
 /* resp. design pro tablety */
-@media screen and (min-width: 420px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
   .opening {
     height: 300px;
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .opening__projectName {
