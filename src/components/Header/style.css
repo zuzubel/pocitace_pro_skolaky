@@ -1,4 +1,4 @@
-body{
+body {
   position: relative;
 }
 
@@ -111,6 +111,7 @@ header {
   .opening {
     height: 60vh;
     font-size: 48px;
+    padding: 0 13px;
   }
 
   .opening__projectName {
@@ -157,5 +158,6 @@ header {
 
   .header__container {
     background-color: #eac85e;
+    position: relative;
   }
 }
