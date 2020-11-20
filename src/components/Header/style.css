@@ -14,6 +14,7 @@ header {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(241, 242, 242, 1);
   position: fixed;
+  z-index: 100;
   width: 100%;
 }
 
@@ -78,14 +79,14 @@ header {
   font-size: 24px;
   text-align: center;
   height: 280px;
-  padding: 0 13px;
+  padding: 82px 13px 0 13px;
   margin: 0;
   font-weight: normal;
 }
 
 .opening__projectName {
   margin: 0;
-  padding-top: 70px;
+  padding-top: 90px;
 }
 
 .opening__projectSlogan {
@@ -101,7 +102,7 @@ header {
 
   .opening__projectName {
     margin: 0;
-    padding-top: 65px;
+    padding-top: 85px;
   }
 }
 
@@ -113,7 +114,7 @@ header {
   }
 
   .opening__projectName {
-    padding-top: 90px;
+    padding-top: 120px;
   }
 
   .nav-column {
