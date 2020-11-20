@@ -1,7 +1,5 @@
 .aboutProject {
   background-color: #d79c77;
-  display: flex;
-  flex-direction: column;
 }
 
 .aboutProject--h {
@@ -12,7 +10,7 @@
 .aboutProject--p {
   padding: 20px 40px 10px 40px;
   text-align: justify;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 0px;
 }
 
@@ -20,8 +18,11 @@
   background-image: url('../img_components/oProjektu_foto.jpg');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 340px;
-  height: 300px;
+
+  height: 200px;
+  align-self: center;
+  margin: 10px 30px;
+  background-position-x: center;
 }
 
 @media screen and (min-width: 768px) {
