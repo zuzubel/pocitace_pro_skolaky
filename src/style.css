@@ -1,7 +1,8 @@
+
 body {
   margin: 0;
+  background-color: rgba(229, 229, 229, 1);
 }
-
 
 /* responzivní design pro větší telefony a tablety */
 @media screen and (min-width: 361px) and (max-width: 768px) {
