@@ -44,13 +44,13 @@
   align-self: center;
 }
 
-.for__donors--a:hover,
-.for__schools--a:hover {
+.for__donors--a,
+.for__schools--a {
   border-bottom: 3px solid #eac85e;
 }
 
 /* tablety */
-@media screen and (min-width: 361px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
   .for {
     display: flex;
     flex-shrink: 0;
@@ -77,11 +77,6 @@
   .for__schools--a,
   .for__donors--a {
     font-size: 24px;
-  }
-
-  .for__donors--a:hover,
-  .for__schools--a:hover {
-    border-bottom: 3px solid #eac85e;
   }
 }
 
