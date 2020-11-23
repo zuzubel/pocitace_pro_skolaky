@@ -37,21 +37,27 @@ header {
   background-color: black;
   white-space: nowrap;
   text-align: right;
+  border-radius: 2px;
 }
 
 .nav__a {
   font-size: 17px;
   text-decoration: none;
   display: block;
-  color: rgb(244, 245, 245);
+  color: rgba(230, 231, 231, 0.959);
   padding: 20px;
+}
+
+.nav__a:hover {
+  color: white;
 }
 
 .nav-btn {
   width: 3rem;
   height: 3rem;
   padding: 0 20px 0 0;
-  border: none;
+  border: 0;
+  outline: none;
   background-color: inherit;
   background-image: url('../img_components/menu_black.png');
   background-size: contain;
