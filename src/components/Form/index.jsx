@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../db.js';
+import firebase from 'firebase/app';
 
 export const Form = () => {
   const [polozky, setPolozky] = useState([]);
@@ -12,9 +13,18 @@ export const Form = () => {
   const [info, setInfo] = useState('');
 
   useEffect(() => {
-    db.collection('chci_pocitac').onSnapshot((query) => {
-      setPolozky(query.docs.map((doc) => doc.data()));
-    });
+    return db
+      .collection('chci_pocitac')
+      .orderBy('datumVytvoreni')
+      .onSnapshot((querySnapshot) => {
+        setPolozky(
+          querySnapshot.docs.map((doc) => {
+            const data = doc.data();
+            data.id = doc.id;
+            return data;
+          }),
+        );
+      });
   }, []);
 
   return (
@@ -32,18 +42,27 @@ export const Form = () => {
             kontakt_telefon: kontaktTelefon,
             poptavam: poptavka,
             info: info,
+            vyrizeno: false,
+            datumVytvoreni: firebase.firestore.FieldValue.serverTimestamp(),
           });
+          setSkola(''),
+            setSkolaAdresa(''),
+            setKontakt(''),
+            setKontaktEmail(''),
+            setKontaktTelefon(''),
+            setPoptavka(''),
+            setInfo('');
         }}
       >
         <label>
-          Název školy:
+          Název školy:{' '}
           <input
             value={skola}
             onChange={(event) => setSkola(event.target.value)}
           />
         </label>
         <label>
-          Adresa:
+          Adresa:{' '}
           <input
             value={skolaAdresa}
             onChange={(event) => setSkolaAdresa(event.target.value)}
@@ -51,35 +70,35 @@ export const Form = () => {
         </label>
 
         <label>
-          Kontaktní osoba:
+          Kontaktní osoba:{' '}
           <input
             value={kontakt}
             onChange={(event) => setKontakt(event.target.value)}
           />
         </label>
         <label>
-          E-mail:
+          E-mail:{' '}
           <input
             value={kontaktEmail}
             onChange={(event) => setKontaktEmail(event.target.value)}
           />
         </label>
         <label>
-          Telefon:
+          Telefon:{' '}
           <input
             value={kontaktTelefon}
             onChange={(event) => setKontaktTelefon(event.target.value)}
           />
         </label>
         <label>
-          Co potřebuji:
+          Co potřebuji:{' '}
           <input
             value={poptavka}
             onChange={(event) => setPoptavka(event.target.value)}
           />
         </label>
         <label>
-          Doplňující informace:
+          Doplňující informace:{' '}
           <input
             value={info}
             onChange={(event) => setInfo(event.target.value)}
@@ -102,7 +121,23 @@ export const Form = () => {
             }
           </li>
         ))}
+        <input
+          type="checkbox"
+          checked={polozka.vyrizeno}
+          onChange={(event) => {
+            db.collection('chci_pocitac').doc(polozka.id).update({
+              vyrizeno: event.target.checked,
+            });
+          }}
+        />
       </ul>
+      <button
+        onClick={() => {
+          db.collection('chci_pocitac').doc(polozka.id).delete();
+        }}
+      >
+        SMAZAT
+      </button>
     </>
   );
 };
