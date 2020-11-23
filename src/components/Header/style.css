@@ -71,6 +71,7 @@ header {
   padding: 10px 20px;
 }
 
+/* přidat na header proklik na hlavní stránku */
 .header__logo {
   width: 4rem;
   height: 4rem;
@@ -122,19 +123,22 @@ header {
 
 /* responzivní design pro desktop */
 @media screen and (min-width: 768px) {
-  .opening {
-    height: 60vh;
-    font-size: 48px;
-    padding: 0 13px;
+
+  .header__logo { 
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    z-index: 100%;
   }
 
-  .opening__projectName {
-    padding-top: 120px;
+  .nav__a:hover {
+    color: black;
   }
 
   .nav-column {
     position: static;
     margin: 0;
+    background-color: transparent;
   }
 
   .nav-row {
@@ -147,10 +151,6 @@ header {
     color: black;
     margin-top: 0rem;
     margin-bottom: 0rem;
-  }
-
-  .nav__a:hover {
-    color: black;
   }
 
   .nav-btn {
@@ -177,5 +177,15 @@ header {
   .header__container {
     background-color: #eac85e;
     position: relative;
+  }
+
+  .opening {
+    height: 60vh;
+    font-size: 48px;
+    padding: 0 13px;
+  }
+
+  .opening__projectName {
+    padding-top: 120px;
   }
 }
