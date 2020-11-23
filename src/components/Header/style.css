@@ -101,6 +101,14 @@ header {
 
 /* resp. design pro tablety */
 @media screen and (min-width: 480px) and (max-width: 768px) {
+  .nav__a {
+    font-size: 21px;
+    text-decoration: none;
+    display: block;
+    color: rgba(230, 231, 231, 0.959);
+    padding: 22px;
+  }
+
   .opening {
     height: 300px;
     font-size: 28px;
@@ -139,6 +147,10 @@ header {
     color: black;
     margin-top: 0rem;
     margin-bottom: 0rem;
+  }
+
+  .nav__a:hover {
+    color: black;
   }
 
   .nav-btn {
