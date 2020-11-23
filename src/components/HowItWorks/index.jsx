@@ -1,15 +1,45 @@
 import React, { useState } from 'react';
-import './style.css'
+import './style.css';
 
 export const HowItWorks = () => {
   return (
-    <div className="howItWorks__container">
-      <div className="howItWorks__donate">
-        <h3>Jak mohu darovat počítač?</h3>
+    <section className="howItWorks__container">
+      <div className="donate__steps">
+        <h3 className="donate__h">Jak mohu darovat počítač?</h3>
+        <div className="donate__step">
+          <div className="donate__step1-img"></div>
+          <p className="donate__p">Vyberete si instituci ZDE</p>
+        </div>
+        <div className="donate__step">
+          <div className="donate__step2-img"></div>
+          <p className="donate__p">
+            Spojte se s kontaktní osobou a domluvte způsob předání
+          </p>
+        </div>
+        <div className="donate__step">
+          <div className="donate__step3-img"></div>
+          <p className="donate__p">Předejte počítač</p>
+        </div>
       </div>
-      <div className='howItWorks__apply'>
-        <h3>Jak mohu získat počítač?</h3>
+      <div className="apply__steps">
+        <h3 className="apply__h">Jak mohu získat počítač?</h3>
+        <div className="apply__step">
+          <div className="apply__step1-img"></div>
+          <p className="apply__p">Vyplňte formulář ZDE</p>
+        </div>
+        <div className="apply__step">
+          <div className="apply__step2-img"></div>
+          <p className="apply__p">Z vložených údajů se vytvoří inzerát</p>
+        </div>
+        <div className="apply__step">
+          <div className="apply__step3-img"></div>
+          <p className="apply__p">Dárce Vás bude kontaktovat a domluvíte se na způsobu předání</p>
+        </div>
+        <div className="apply__step">
+          <div className="apply__step4-img"></div>
+          <p className="apply__p">Obdržíte výpočetní techniku, kteru předáte studentům</p>
+        </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};

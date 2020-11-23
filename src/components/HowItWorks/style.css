@@ -4,14 +4,68 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 60px 0 60px 0;
 }
 
-.howItWorks__donate,
-.howItWorks__apply {
-  margin: 20px 30px;
+.donate__h,
+.apply__h {
+  font-size: 28px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.donate__steps,
+.apply__steps {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color:  rgb(243, 243, 243);
+}
+
+.apply__steps {
+  margin-top: 36px;
+}
+
+.donate__step,
+.apply__step {
+  display: flex;
+  width: 90%;
+}
+
+.donate__p,
+.apply__p {
+  width: 70%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 24px;
+}
+
+.donate__step1-img,
+.donate__step2-img,
+.donate__step3-img,
+.apply__step1-img,
+.apply__step2-img,
+.apply__step3-img,
+.apply__step4-img {
+  width: 30%;
+  background-position: center;
+  background-size: 30%;
+  background-repeat: no-repeat;
+}
+
+.donate__step1-img,
+.apply__step2-img {
+  background-image: url('../img_components/form.svg');
+}
+
+.donate__step2-img,
+.apply__step3-img {
+  background-image: url('../img_components/call.svg');
+}
+
+.donate__step3-img,
+.apply__step4-img {
+  background-image: url('../img_components/gift.svg');
+}
+
+.apply__step1-img {
+  background-image: url('../img_components/write.svg');
 }
