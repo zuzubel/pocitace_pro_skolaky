@@ -27,7 +27,7 @@
 /* resp. design pro tablety */
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .aboutProject--h {
-    font-size: 28px;
+    font-size: 32px;
     text-align: center;
   }
 
