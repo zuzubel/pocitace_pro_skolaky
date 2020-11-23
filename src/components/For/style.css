@@ -42,6 +42,7 @@
   border-bottom: 3px solid transparent;
   width: fit-content;
   align-self: center;
+  margin-top: 8px;
 }
 
 .for__donors--a,

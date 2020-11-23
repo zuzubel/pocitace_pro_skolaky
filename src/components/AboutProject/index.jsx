@@ -5,8 +5,8 @@ export const AboutProject = () => {
   return (
     <>
       <div className="aboutProject">
-        <h1 className="aboutProject--h">O projektu</h1>
-        <div className="aboutProject--flex">
+        <div className="aboutProject--text">
+          <h1 className="aboutProject--h">O projektu</h1>
           <p className="aboutProject--p">
             Pandemie koronaviru přenusula studium do online prostředí. Mnoho
             žáků a studentů ale nemá vyhovující podmínky a každým dnem jim tak
@@ -14,8 +14,8 @@ export const AboutProject = () => {
             Pojďme společně pomoci! Dostaňme nepotřebnou IT techniku ke
             studentům, kteří ji potřebují.
           </p>
-
-          <div className="aboutProject--foto"></div>
+        </div>
+        <div className="aboutProject--foto">
         </div>
       </div>
     </>

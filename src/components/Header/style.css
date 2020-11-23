@@ -83,7 +83,7 @@ header {
 
 /* je třeba změnit font weight na tlustčí,ale fuguje to jen z extrému do extrému. Zkusit stáhnout z google fonts */
 .opening {
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
   height: 280px;
   padding: 82px 13px 0 13px;
@@ -123,8 +123,11 @@ header {
 
 /* responzivní design pro desktop */
 @media screen and (min-width: 768px) {
+  .header__left {
+    padding: 10px 10px;
+  }
 
-  .header__logo { 
+  .header__logo {
     width: 4rem;
     height: 4rem;
     position: fixed;
