@@ -1,0 +1,33 @@
+.form_sec {
+  background-image: url('../img_components/form_img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100vh;
+  display: flex;
+}
+
+.form_div {
+  max-width: 280px;
+  margin: 0 auto;
+  background: rgba(0 0 0 0.8);
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+}
+
+.form_headline {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 48px;
+}
+
+.form__inputs {
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+.form__textarea {
+  width: 48%;
+}
