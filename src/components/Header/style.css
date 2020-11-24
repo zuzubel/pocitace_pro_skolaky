@@ -40,7 +40,7 @@ header {
   border-radius: 2px;
 }
 
-.nav__a {
+.nav__link {
   font-size: 17px;
   text-decoration: none;
   display: block;
@@ -48,7 +48,7 @@ header {
   padding: 20px;
 }
 
-.nav__a:hover {
+.nav__link:hover {
   color: white;
 }
 
@@ -101,7 +101,7 @@ header {
 
 /* resp. design pro tablety */
 @media screen and (min-width: 480px) and (max-width: 768px) {
-  .nav__a {
+  .nav__link {
     font-size: 21px;
     text-decoration: none;
     display: block;
@@ -133,7 +133,7 @@ header {
     margin-top: -30px;
   }
 
-  .nav__a:hover {
+  .nav__link:hover {
     color: black;
   }
 
@@ -147,7 +147,7 @@ header {
     display: block;
   }
 
-  .nav__a {
+  .nav__link {
     display: inline-block;
     font-size: 17px;
     color: black;
@@ -184,7 +184,7 @@ header {
   .opening {
     height: 60vh;
     font-size: 48px;
-    padding: 0 13px;
+    padding: 0 5rem;
   }
 
   .opening__projectName {

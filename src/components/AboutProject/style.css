@@ -65,6 +65,7 @@
 
   .aboutProject--foto {
     width: 50%;
+    min-height: 500px;
     background-image: url('../img_components/oProjektu_foto.jpg');
     background-position: center;
     background-size: cover;
