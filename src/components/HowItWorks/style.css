@@ -14,14 +14,15 @@
   padding: 0 24px;
 }
 
-.donate__steps,
-.apply__steps {
+.donate__container,
+.apply__container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
 }
 
-.apply__steps {
+.apply__container {
   margin-top: 36px;
 }
 
@@ -29,13 +30,13 @@
 .apply__step {
   display: flex;
   width: 90%;
+  margin: 1% 0;
 }
 
 .donate__p,
 .apply__p {
   width: 70%;
   font-family: Arial, Helvetica, sans-serif;
-  padding-right: 24px;
 }
 
 .donate__step1-img,
@@ -46,8 +47,9 @@
 .apply__step3-img,
 .apply__step4-img {
   width: 30%;
+  max-width: 64px;
   background-position: center;
-  background-size: 30%;
+  background-size: 35%;
   background-repeat: no-repeat;
 }
 
@@ -68,4 +70,96 @@
 
 .apply__step1-img {
   background-image: url('../img_components/write.svg');
+}
+
+/* TABLETY */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .donate__step1-img,
+  .donate__step2-img,
+  .donate__step3-img,
+  .apply__step1-img,
+  .apply__step2-img,
+  .apply__step3-img,
+  .apply__step4-img {
+    width: 20%;
+    min-width: 32px;
+    background-size: 35%;
+  }
+
+  .donate__h,
+  .apply__h {
+    font-size: 32px;
+  }
+
+  .donate__p,
+  .apply__p{
+    font-size: 20px;
+  }
+
+  .donate__step,
+  .apply__step {
+    margin: 2% 0;
+  }
+
+  .donate__container,
+  .apply__container {
+    max-width: 500px;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 768px) {
+  .howItWorks__container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .apply__container,
+  .donate__container {
+    margin-top: 36px;
+    max-width: 40%;
+    align-items: flex-start;
+  }
+
+  .donate__container{
+    margin-left: 80px;
+    margin-right: 16px;
+  }
+
+  .apply__container{
+    margin-right: 20px;
+  }
+
+  .donate__step,
+  .apply__step {
+    width: 90%;
+  }
+
+  .donate__step1-img,
+  .donate__step2-img,
+  .donate__step3-img,
+  .apply__step1-img,
+  .apply__step2-img,
+  .apply__step3-img,
+  .apply__step4-img {
+    width: 10%;
+    max-width: 40px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 16px;
+  }
+
+  .donate__h,
+  .apply__h {
+    font-size: 48px;
+    text-align: start;
+  }
+
+  .donate__p,
+  .apply__p {
+    width: 80%;
+    padding-left: 4%;
+    font-size: 24px;
+  }
 }
