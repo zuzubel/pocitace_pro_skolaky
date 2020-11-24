@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
 
 export const AboutProject = () => {
   return (
     <>
-      <div className="aboutProject">
+      <div id="AboutProject" className="aboutProject">
         <div className="aboutProject--text">
           <h1 className="aboutProject--h">O projektu</h1>
           <p className="aboutProject--p">

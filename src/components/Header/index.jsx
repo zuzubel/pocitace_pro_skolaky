@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 export const Header = () => {
@@ -10,7 +11,9 @@ export const Header = () => {
     <header>
       <div className="header__container">
         <div className="header__left">
-          <div className="header__logo"></div>
+          <Link to="/home">
+            <div className="header__logo"></div>
+          </Link>
         </div>
         <div className="header__right">
           <button
@@ -19,18 +22,18 @@ export const Header = () => {
             onClick={() => setBurger(!burger)}
           ></button>
           <nav className={burger ? 'nav-column' : 'nav-row'}>
-            <a className="nav__a" href="#" onClick={handleClick}>
+            <Link className="nav__a" to="/about_project" onClick={handleClick}>
               O projektu
-            </a>
-            <a className="nav__a" href="#" onClick={handleClick}>
+            </Link>
+            <Link className="nav__a" to="/" onClick={handleClick}>
               Chci darovat
-            </a>
-            <a className="nav__a" href="#" onClick={handleClick}>
+            </Link>
+            <Link className="nav__a" to="/form" onClick={handleClick}>
               Potřebuji počítač
-            </a>
-            <a className="nav__a" href="#" onClick={handleClick}>
+            </Link>
+            <Link className="nav__a" to="/" onClick={handleClick}>
               Kontakt
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
