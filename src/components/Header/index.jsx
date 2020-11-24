@@ -5,7 +5,7 @@ import './style.css';
 export const Header = () => {
   const [burger, setBurger] = useState(false);
   const handleClick = () => setBurger(false);
-  
+
   return (
     <header>
       <div className="header__container">
@@ -21,6 +21,7 @@ export const Header = () => {
             onClick={() => setBurger(!burger)}
           ></button>
           <nav className={burger ? 'nav-column' : 'nav-row'}>
+            <Link to="/home">Úvod</Link>
             <Link
               className="nav__link"
               to="/about_project"
