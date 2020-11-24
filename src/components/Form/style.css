@@ -1,8 +1,4 @@
 .form_sec {
-  background-image: url('../img_components/form_img.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
   height: 100vh;
   display: flex;
 }
@@ -13,7 +9,6 @@
   background: rgba(0 0 0 0.8);
   padding: 30px;
   border-radius: 5px;
-  display: flex;
 }
 
 .form_headline {
@@ -30,4 +25,15 @@
 
 .form__textarea {
   width: 48%;
+}
+
+@media screen and (min-width: 768px) {
+  .form_sec {
+    background-image: url('../img_components/form_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+    display: flex;
+  }
 }
