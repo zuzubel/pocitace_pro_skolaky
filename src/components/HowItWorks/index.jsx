@@ -25,7 +25,7 @@ export const HowItWorks = () => {
       </div>
       <div className="apply__container">
         <h3 className="apply__h">Jak mohu získat počítač?</h3>
-        <div className="appy__container">
+        <div className="appy__steps">
           <div className="apply__step">
             <div className="apply__step1-img"></div>
             <p className="apply__p">Vyplňte formulář ZDE</p>
@@ -43,7 +43,7 @@ export const HowItWorks = () => {
           <div className="apply__step">
             <div className="apply__step4-img"></div>
             <p className="apply__p">
-              Obdržíte výpočetní techniku, kteru předáte studentům
+              Obdržíte výpočetní techniku, kterou předáte studentům
             </p>
           </div>
         </div>
