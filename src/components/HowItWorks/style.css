@@ -81,8 +81,7 @@
   .apply__step2-img,
   .apply__step3-img,
   .apply__step4-img {
-    width: 20%;
-    min-width: 32px;
+    width: 28%;
     background-size: 35%;
   }
 
@@ -93,7 +92,7 @@
 
   .donate__p,
   .apply__p{
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .donate__step,
@@ -142,7 +141,7 @@
   .apply__step2-img,
   .apply__step3-img,
   .apply__step4-img {
-    width: 10%;
+    width: 9%;
     max-width: 40px;
     background-position: center;
     background-size: contain;
@@ -152,7 +151,7 @@
 
   .donate__h,
   .apply__h {
-    font-size: 48px;
+    font-size: 40px;
     text-align: start;
   }
 
@@ -160,6 +159,6 @@
   .apply__p {
     width: 80%;
     padding-left: 4%;
-    font-size: 24px;
+    font-size: 17px;
   }
 }
