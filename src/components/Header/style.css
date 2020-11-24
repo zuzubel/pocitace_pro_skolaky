@@ -112,6 +112,7 @@ header {
   .opening {
     height: 300px;
     font-size: 32px;
+    padding: 82px 16px 20px 16px;
   }
 
   .opening__projectName {
@@ -127,10 +128,11 @@ header {
   }
 
   .header__logo {
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
     position: fixed;
     margin-top: -30px;
+    margin-left: 8px;
   }
 
   .nav__link:hover {
@@ -188,6 +190,6 @@ header {
   }
 
   .opening__projectName {
-    padding-top: 120px;
+    padding-top: 90px;
   }
 }
