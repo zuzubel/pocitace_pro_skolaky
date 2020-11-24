@@ -63,6 +63,7 @@ export const Form = () => {
               </>
             ))}
           </ul>
+
           <form
             className="form"
             onSubmit={(event) => {
@@ -87,82 +88,85 @@ export const Form = () => {
                 setInfo('');
             }}
           >
-            <div className="form__inputs">
-              <div className="row">
-                <label>
-                  Název školy:{' '}
-                  <input
-                    type="text"
-                    value={skola}
-                    onChange={(event) => setSkola(event.target.value)}
-                  />
-                </label>
+            <div className="form__fields">
+              <div className="form__inputs">
+                <div className="row">
+                  <label>
+                    <input
+                      type="text"
+                      placeholder="Název školy"
+                      value={skola}
+                      onChange={(event) => setSkola(event.target.value)}
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    <input
+                      type="text"
+                      placeholder="Adresa"
+                      value={skolaAdresa}
+                      onChange={(event) => setSkolaAdresa(event.target.value)}
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    <input
+                      type="text"
+                      placeholder="Kontaktní osoba"
+                      value={kontakt}
+                      onChange={(event) => setKontakt(event.target.value)}
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    <input
+                      type="email"
+                      placeholder="E-mail"
+                      value={kontaktEmail}
+                      onChange={(event) => setKontaktEmail(event.target.value)}
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    <input
+                      type="tel"
+                      placeholder="Telefon"
+                      value={kontaktTelefon}
+                      onChange={(event) =>
+                        setKontaktTelefon(event.target.value)
+                      }
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    <input
+                      type="text"
+                      placeholder="Poptávám..."
+                      value={poptavka}
+                      onChange={(event) => setPoptavka(event.target.value)}
+                    />
+                  </label>
+                </div>
               </div>
-              <div className="row">
-                <label>
-                  Adresa:{' '}
-                  <input
-                    type="text"
-                    value={skolaAdresa}
-                    onChange={(event) => setSkolaAdresa(event.target.value)}
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  Kontaktní osoba:{' '}
-                  <input
-                    type="text"
-                    value={kontakt}
-                    onChange={(event) => setKontakt(event.target.value)}
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  E-mail:{' '}
-                  <input
-                    type="email"
-                    value={kontaktEmail}
-                    onChange={(event) => setKontaktEmail(event.target.value)}
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  Telefon:{' '}
-                  <input
-                    type="tel"
-                    value={kontaktTelefon}
-                    onChange={(event) => setKontaktTelefon(event.target.value)}
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  Co potřebuji:{' '}
-                  <input
-                    type="text"
-                    value={poptavka}
-                    onChange={(event) => setPoptavka(event.target.value)}
-                  />
-                </label>
+              <div className="form__textarea">
+                <div className="row">
+                  <label>
+                    <textarea
+                      type="text"
+                      placeholder="Dejte nám dopňující informace a zvyšte tak šanci, že právě vaše přání bude vyslyšeno."
+                      value={info}
+                      onChange={(event) => setInfo(event.target.value)}
+                    />
+                  </label>
+                </div>
               </div>
             </div>
-            <div className="form__textarea">
-              <div className="row">
-                <label>
-                  Doplňující informace:{' '}
-                  <textarea
-                    type="text"
-                    placeholder="Dejte nám dopňující informace a zvyšte tak šanci, že právě vaše přání bude vyslyšeno."
-                    value={info}
-                    onChange={(event) => setInfo(event.target.value)}
-                  />
-                </label>
-              </div>
-            </div>
-            <button>Přidat poptávku</button>
+            <button className="btn">Přidat poptávku</button>
           </form>
         </div>
       </section>
