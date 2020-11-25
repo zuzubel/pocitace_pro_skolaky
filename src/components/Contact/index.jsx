@@ -7,10 +7,10 @@ export const Contact = () => {
       <a href="mailto:pocitaceproskolaky@gmail.com" className="contact__a">SPOJTE SE S NÁMI</a>
       <p className="contact__h first">
         Máte nápad na vylepšení projektu Počítače pro školáky?
-      </p><div className="line"></div>
+      </p><hr className="line"/>
       <p className="contact__h middle">
         Chcete poskytnout větší množství počítačů?
-      </p><div className="line"></div>
+      </p><hr className="line"/>
       <p className="contact__h last">Máte dotaz?</p>
       <p className="contact__email">
         Napište nám: <em className="email">pocitaceproskolaky@gmail.com</em>

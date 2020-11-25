@@ -78,7 +78,7 @@ export const Form = () => {
                   <label>
                     <input
                       type="text"
-                      placeholder="* Adresa"
+                      placeholder="* Adresa školy"
                       value={skolaAdresa}
                       onChange={(event) => setSkolaAdresa(event.target.value)}
                       required
@@ -111,12 +111,11 @@ export const Form = () => {
                   <label>
                     <input
                       type="tel"
-                      placeholder="* Telefon"
+                      placeholder="Telefon"
                       value={kontaktTelefon}
                       onChange={(event) =>
                         setKontaktTelefon(event.target.value)
                       }
-                      required
                     />
                   </label>
                 </div>
@@ -149,15 +148,17 @@ export const Form = () => {
                   * Souhlasím se zveřejněním kontaktních údajů.
                   <input
                     type="checkbox"
+                    checked={souhlas}
                     onChange={() => {
                       setSouhlas(!souhlas);
                     }}
+                    required
                   />
                 </label>
               </div>
             </div>
             <p className="form__p">Pole označená * jsou povinná.</p>
-            <button type="submit" className="btn" disabled={souhlas === false}>
+            <button type="submit" className="btn">
               Přidat poptávku
             </button>
           </form>
