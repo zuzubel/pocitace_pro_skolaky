@@ -14,15 +14,15 @@ const App = () => {
     <Router>
       <Header />
       <Switch>
-        <Route path="/home">
-          <For />
-        </Route>
         <Route path="/about_project">
           <AboutProject />
           <HowItWorks />
         </Route>
         <Route path="/form">
           <Form />
+        </Route>
+        <Route path="/">
+          <For />
         </Route>
       </Switch>
       <footer>Czechitas</footer>

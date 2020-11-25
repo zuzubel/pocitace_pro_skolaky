@@ -10,7 +10,7 @@ export const Header = () => {
     <header>
       <div className="header__container">
         <div className="header__left">
-          <Link to="/home">
+          <Link to="/">
             <div className="header__logo"></div>
           </Link>
         </div>
@@ -21,7 +21,9 @@ export const Header = () => {
             onClick={() => setBurger(!burger)}
           ></button>
           <nav className={burger ? 'nav-column' : 'nav-row'}>
-            <Link to="/home">Úvod</Link>
+            <Link className="nav__link" to="/" onClick={handleClick}>
+              Úvod
+            </Link>
             <Link
               className="nav__link"
               to="/about_project"
