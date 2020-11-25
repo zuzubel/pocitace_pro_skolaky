@@ -12,6 +12,7 @@ export const Form = () => {
   const [kontaktTelefon, setKontaktTelefon] = useState('');
   const [poptavka, setPoptavka] = useState('');
   const [info, setInfo] = useState('');
+  const [souhlas, setSouhlas] = useState(false);
 
   useEffect(() => {
     return db
@@ -33,7 +34,6 @@ export const Form = () => {
       <section className="form_sec">
         <div className="form_div">
           <h1 className="form_headline">Formulář</h1>
-          
 
           <form
             className="form"
@@ -47,6 +47,7 @@ export const Form = () => {
                 kontakt_telefon: kontaktTelefon,
                 poptavam: poptavka,
                 info: info,
+                souhlas: souhlas,
                 vyrizeno: false,
                 datumVytvoreni: firebase.firestore.FieldValue.serverTimestamp(),
               });
@@ -57,6 +58,7 @@ export const Form = () => {
                 setKontaktTelefon(''),
                 setPoptavka(''),
                 setInfo('');
+              setSouhlas(false);
             }}
           >
             <div className="form__fields">
@@ -65,9 +67,10 @@ export const Form = () => {
                   <label>
                     <input
                       type="text"
-                      placeholder="Název školy"
+                      placeholder="* Název školy"
                       value={skola}
                       onChange={(event) => setSkola(event.target.value)}
+                      required
                     />
                   </label>
                 </div>
@@ -75,9 +78,10 @@ export const Form = () => {
                   <label>
                     <input
                       type="text"
-                      placeholder="Adresa"
+                      placeholder="* Adresa"
                       value={skolaAdresa}
                       onChange={(event) => setSkolaAdresa(event.target.value)}
+                      required
                     />
                   </label>
                 </div>
@@ -85,9 +89,10 @@ export const Form = () => {
                   <label>
                     <input
                       type="text"
-                      placeholder="Kontaktní osoba"
+                      placeholder="* Kontaktní osoba"
                       value={kontakt}
                       onChange={(event) => setKontakt(event.target.value)}
+                      required
                     />
                   </label>
                 </div>
@@ -95,9 +100,10 @@ export const Form = () => {
                   <label>
                     <input
                       type="email"
-                      placeholder="E-mail"
+                      placeholder="* E-mail"
                       value={kontaktEmail}
                       onChange={(event) => setKontaktEmail(event.target.value)}
+                      required
                     />
                   </label>
                 </div>
@@ -105,11 +111,12 @@ export const Form = () => {
                   <label>
                     <input
                       type="tel"
-                      placeholder="Telefon"
+                      placeholder="* Telefon"
                       value={kontaktTelefon}
                       onChange={(event) =>
                         setKontaktTelefon(event.target.value)
                       }
+                      required
                     />
                   </label>
                 </div>
@@ -117,27 +124,42 @@ export const Form = () => {
                   <label>
                     <input
                       type="text"
-                      placeholder="Poptávám..."
+                      placeholder="* Poptávám..."
                       value={poptavka}
                       onChange={(event) => setPoptavka(event.target.value)}
+                      required
                     />
                   </label>
+                </div>
+                <div className="form__textarea">
+                  <div className="row">
+                    <label>
+                      <textarea
+                        type="text"
+                        placeholder="Zde vložte dopňující informace a zvyšte tak šanci, že právě vaše přání bude vyslyšeno."
+                        value={info}
+                        onChange={(event) => setInfo(event.target.value)}
+                      />
+                    </label>
+                  </div>
                 </div>
               </div>
-              <div className="form__textarea">
-                <div className="row">
-                  <label>
-                    <textarea
-                      type="text"
-                      placeholder="Dejte nám dopňující informace a zvyšte tak šanci, že právě vaše přání bude vyslyšeno."
-                      value={info}
-                      onChange={(event) => setInfo(event.target.value)}
-                    />
-                  </label>
-                </div>
+              <div className="form__checkbox">
+                <label>
+                  * Souhlasím se zveřejněním kontaktních údajů.
+                  <input
+                    type="checkbox"
+                    onChange={() => {
+                      setSouhlas(!souhlas);
+                    }}
+                  />
+                </label>
               </div>
             </div>
-            <button className="btn">Přidat poptávku</button>
+            <p className="form__p">Pole označená * jsou povinná.</p>
+            <button type="submit" className="btn" disabled={souhlas === false}>
+              Přidat poptávku
+            </button>
           </form>
 
           <ul>
@@ -169,8 +191,6 @@ export const Form = () => {
             ))}
           </ul>
         </div>
-
-        
       </section>
     </>
   );

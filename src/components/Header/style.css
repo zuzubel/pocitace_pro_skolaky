@@ -162,12 +162,12 @@ header {
   }
 
   .header__right {
-    padding: 10px 0px;
+    padding: 10px 0;
   }
 
   .header__right a {
     padding: 30px 4px 6px 4px;
-    margin: 0 26px 0 26px;
+    margin: 0 24px;
     text-decoration: none;
     color: black;
     width: fit-content;
