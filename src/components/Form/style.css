@@ -63,15 +63,19 @@
 
 @media screen and (min-width: 768px) {
   .form_sec {
-    background-image: url('../img_components/form_img.jpg');
+    background: linear-gradient(
+        to bottom,
+        rgba(242, 242, 242, 0.6),
+        rgba(0, 0, 0, 0)
+      ),
+      url('../img_components/form_img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100vh;
-    display: flex;
+    padding-bottom: 40px;
   }
 
-  .form__fields {
-    display: flex;
+  .form_div {
+    width: 600px;
   }
 }

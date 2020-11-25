@@ -33,36 +33,7 @@ export const Form = () => {
       <section className="form_sec">
         <div className="form_div">
           <h1 className="form_headline">Formulář</h1>
-          <ul>
-            {polozky.map((polozka) => (
-              <>
-                <li key={polozka.id}>
-                  <input
-                    type="checkbox"
-                    checked={polozka.vyrizeno}
-                    onChange={(event) => {
-                      db.collection('chci_pocitac').doc(polozka.id).update({
-                        vyrizeno: event.target.checked,
-                      });
-                    }}
-                  />
-                  <button
-                    onClick={() => {
-                      db.collection('chci_pocitac').doc(polozka.id).delete();
-                    }}
-                  >
-                    SMAZAT INZERÁT
-                  </button>
-                </li>
-                <li>{polozka.skola}</li>
-                <li>{polozka.skola_adresa}</li>
-                <li>{polozka.poptavam}</li>
-                <li>{polozka.info}</li>
-                <li>{polozka.kontakt_email}</li>
-                <li>{polozka.kontakt_telefon}</li>
-              </>
-            ))}
-          </ul>
+          
 
           <form
             className="form"
@@ -168,7 +139,38 @@ export const Form = () => {
             </div>
             <button className="btn">Přidat poptávku</button>
           </form>
+
+          <ul>
+            {polozky.map((polozka) => (
+              <>
+                <div>{polozka.skola}</div>
+                <div>{polozka.skola_adresa}</div>
+                <div>{polozka.poptavam}</div>
+                <div>{polozka.info}</div>
+                <div key={polozka.id}>
+                  <input
+                    type="text"
+                    checked={polozka.vyrizeno}
+                    onChange={(event) => {
+                      db.collection('chci_pocitac').doc(polozka.id).update({
+                        vyrizeno: event.target.checked,
+                      });
+                    }}
+                  />
+                  <button
+                    onClick={() => {
+                      db.collection('chci_pocitac').doc(polozka.id).delete();
+                    }}
+                  >
+                    SMAZAT INZERÁT
+                  </button>
+                </div>
+              </>
+            ))}
+          </ul>
         </div>
+
+        
       </section>
     </>
   );
@@ -177,3 +179,7 @@ export const Form = () => {
 //doplňující informace: udělat větší okénko
 //telefon: nastavit jako číslo
 //přidat povinné položky
+
+// schvovávám, nechceme na stránce vypisovat
+/*                <div>{polozka.kontakt_email}</div>
+                <div>{polozka.kontakt_telefon}</div>*/
