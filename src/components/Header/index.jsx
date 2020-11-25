@@ -37,7 +37,7 @@ export const Header = () => {
             <Link className="nav__link" to="/form" onClick={handleClick}>
               Potřebuji počítač
             </Link>
-            <Link className="nav__link" to="" onClick={handleClick}>
+            <Link className="nav__link" to="/contact" onClick={handleClick}>
               Kontakt
             </Link>
           </nav>
