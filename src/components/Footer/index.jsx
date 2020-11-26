@@ -8,7 +8,10 @@ export const Footer = () => {
         <div className="footer__Czechitas">
           Czechitas Digitální akademie 2020
         </div>
-        <a className="footer__email" href="pocitaceproskolaky@gmail.com">
+        <a
+          className="footer__email"
+          href="mailto: pocitaceproskolaky@gmail.com"
+        >
           Máte otázky? Napište nám!
         </a>
       </div>
