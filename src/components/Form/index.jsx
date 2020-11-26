@@ -31,6 +31,15 @@ export const Form = () => {
 
   return (
     <>
+      <div className="form__opening">
+        <p className="form__opening__h">Víte o dítěti, které potřebuje počítač?</p>
+        <p className="form__opening__p">
+          Jani tady přichází ke slovu tvoje schopnost promlouvat k veřejnosti. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem odit
+          impedit alias quaerat ratione eveniet, ipsam cupiditate, quam nam,
+          voluptas exercitationem! Maxime ex at magnam eaque cumque ducimus
+          molestiae hic libero ullam facere sit, consequatur modi veritatis.
+        </p>
+      </div>
       <section className="form_sec">
         <div className="form_div">
           <h1 className="form_headline">Formulář</h1>
@@ -145,7 +154,6 @@ export const Form = () => {
               </div>
               <div className="form__checkbox">
                 <label>
-                  * Souhlasím se zveřejněním kontaktních údajů.
                   <input
                     type="checkbox"
                     checked={souhlas}
@@ -153,7 +161,8 @@ export const Form = () => {
                       setSouhlas(!souhlas);
                     }}
                     required
-                  />
+                  />{' '}
+                  * Souhlasím se zveřejněním kontaktních údajů.
                 </label>
               </div>
             </div>

@@ -5,8 +5,9 @@
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin: 0 10%;
+  margin: 0 10% 10% 10%;
   border-radius: 2px;
+  
 }
 
 .contact__a {
@@ -46,4 +47,18 @@
   margin: 8px 0;
   width: 8rem;
   background-color: #000;
+}
+
+/* TABLETY */
+@media screen and (min-width: 480px) and (max-width: 768px){
+  .email{
+    font-size: 17px;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 480px){
+  .email{
+    font-size: 17px;
+  }
 }

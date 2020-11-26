@@ -126,11 +126,11 @@
 
   .for__donors--a,
   .for__schools--a {
-    border-bottom: 3px solid transparent;
+    border-bottom: 3px solid #eac85e;
   }
   .for__donors--a:hover,
   .for__schools--a:hover {
-    border-bottom: 3px solid #eac85e;
+    border-bottom: 3px solid transparent;
   }
 
   .for__donors {

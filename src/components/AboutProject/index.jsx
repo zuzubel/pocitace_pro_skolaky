@@ -6,7 +6,7 @@ export const AboutProject = () => {
     <>
       <div id="AboutProject" className="aboutProject">
         <div className="aboutProject--text">
-          <h1 className="aboutProject--h">O projektu</h1>
+          <p className="aboutProject--h">O projektu</p>
           <p className="aboutProject--p">
             Pandemie koronaviru přenusula studium do online prostředí. Mnoho
             žáků a studentů ale nemá vyhovující podmínky a každým dnem jim tak
