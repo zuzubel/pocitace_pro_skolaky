@@ -1,10 +1,11 @@
 .howItWorks__container {
-  max-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 40px 0 60px 0;
+  background-color: rgb(241, 242, 242);
 }
 
 .donate__h,
@@ -19,7 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 280px;
 }
 
 .apply__container {
@@ -29,7 +30,7 @@
 .donate__step,
 .apply__step {
   display: flex;
-  width: 90%;
+  width: 95%;
   margin: 1% 0;
 }
 
@@ -91,7 +92,7 @@
   }
 
   .donate__p,
-  .apply__p{
+  .apply__p {
     font-size: 17px;
   }
 
@@ -116,17 +117,14 @@
   .apply__container,
   .donate__container {
     margin-top: 36px;
-    max-width: 40%;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    min-width: 35%;
     align-items: flex-start;
   }
 
-  .donate__container{
-    margin-left: 80px;
+  .donate__container {
     margin-right: 16px;
-  }
-
-  .apply__container{
-    margin-right: 20px;
   }
 
   .donate__step,
@@ -141,7 +139,7 @@
   .apply__step2-img,
   .apply__step3-img,
   .apply__step4-img {
-    width: 9%;
+    width: 28px;
     max-width: 40px;
     background-position: center;
     background-size: contain;

@@ -7,7 +7,7 @@
 .form__opening {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(248, 248, 248);
   justify-content: center;
   width: 80%;
   margin: 0 10%;
@@ -19,7 +19,7 @@
   padding: 50px 16px 0 16px;
   font-family: 'Times New Roman', Times, serif;
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .form__opening__p {
@@ -89,23 +89,25 @@
 .btn {
   background: #eac85e;
   border-radius: 5px;
+  font-size: 14px;
   text-align: center;
   padding: 10px;
   cursor: pointer;
-  width: 80%;
+  width: 50%;
   text-transform: uppercase;
 }
 
 .form__checkbox {
-  width: 80%;
-  margin-left: 40px;
+  width: 100%;
+  margin-left: 48px;
 }
 
 .form__p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   align-self: flex-start;
-  margin-left: 40px;
+  margin-left: 82px;
+  margin-top: 8px;
 }
 
 /* stylování nevyplněného pole */

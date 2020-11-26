@@ -32,12 +32,13 @@ header {
 
 .nav-column {
   position: absolute;
-  margin-right: -19px;
+  margin-right: -24px;
   top: 100%;
   background-color: black;
   white-space: nowrap;
   text-align: right;
   border-radius: 2px;
+  padding-left: 8px;
 }
 
 .nav__link {
