@@ -31,7 +31,7 @@ export const Header = () => {
             >
               O projektu
             </Link>
-            <Link className="nav__link" to="" onClick={handleClick}>
+            <Link className="nav__link" to="/donate" onClick={handleClick}>
               Chci darovat
             </Link>
             <Link className="nav__link" to="/form" onClick={handleClick}>

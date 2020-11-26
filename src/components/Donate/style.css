@@ -1,0 +1,31 @@
+.donate__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.donate__opening {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(248, 248, 248);
+  justify-content: center;
+  width: 80%;
+  margin: 0 10%;
+  border-radius: 2px;
+}
+
+.donate__opening__h {
+  text-align: center;
+  padding: 50px 16px 0 16px;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  font-size: 24px;
+}
+
+.donate__opening__p {
+  padding: 16px 16px 0 16px;
+  text-align: justify;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
