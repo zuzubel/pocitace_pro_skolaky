@@ -104,13 +104,17 @@
 } */
 
 @media screen and (min-width: 768px) {
-  .form__opening{
+  .form__opening {
     min-height: 280px;
   }
 
-.form__opening__p{
-  padding: 36px;
-}
+  .form__opening__p {
+    padding: 36px;
+  }
+
+  .row{
+    width: 270px;
+  }
 
   .form_sec {
     background: linear-gradient(
@@ -126,6 +130,6 @@
   }
 
   .form_div {
-    width: 600px;
+    max-width: 600px;
   }
 }

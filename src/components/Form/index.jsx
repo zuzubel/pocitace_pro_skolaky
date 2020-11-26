@@ -32,9 +32,12 @@ export const Form = () => {
   return (
     <>
       <div className="form__opening">
-        <p className="form__opening__h">Víte o dítěti, které potřebuje počítač?</p>
+        <p className="form__opening__h">
+          Víte o dítěti, které potřebuje počítač?
+        </p>
         <p className="form__opening__p">
-          Jani tady přichází ke slovu tvoje schopnost promlouvat k veřejnosti. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem odit
+          Jani tady přichází ke slovu tvoje schopnost promlouvat k veřejnosti.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem odit
           impedit alias quaerat ratione eveniet, ipsam cupiditate, quam nam,
           voluptas exercitationem! Maxime ex at magnam eaque cumque ducimus
           molestiae hic libero ullam facere sit, consequatur modi veritatis.
@@ -120,7 +123,7 @@ export const Form = () => {
                   <label>
                     <input
                       type="tel"
-                      placeholder="Telefon"
+                      placeholder="  Telefon"
                       value={kontaktTelefon}
                       onChange={(event) =>
                         setKontaktTelefon(event.target.value)
