@@ -10,7 +10,7 @@ import { HowItWorks } from './components/HowItWorks/index.jsx';
 import { Form } from './components/Form/index';
 import { Contact } from './components/Contact/index';
 import { Footer } from './components/Footer/index';
-import { Donate } from './components/Donate/index'
+import { Donate } from './components/Donate/index';
 
 const App = () => {
   return (
@@ -21,8 +21,8 @@ const App = () => {
           <AboutProject />
           <HowItWorks />
         </Route>
-        <Route>
-          <Donate path="/donate"/>
+        <Route path="/donate">
+          <Donate />
         </Route>
         <Route path="/form">
           <Form />
