@@ -36,12 +36,14 @@ export const Form = () => {
           Víte o dítěti, které potřebuje počítač?
         </p>
         <p className="form__opening__p">
-          Jani tady přichází ke slovu tvoje schopnost promlouvat k veřejnosti.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem odit
-          impedit alias quaerat ratione eveniet, ipsam cupiditate, quam nam,
-          voluptas exercitationem! Maxime ex at magnam eaque cumque ducimus
-          molestiae hic libero ullam facere sit, consequatur modi veritatis.
+          Znáte ve svém okolí nějakého žáka nebo studenta, který se nemůže
+          účastnit online výuky, protože k tomu nemá vyhovující technické
+          podmínky? Zastupujete dětský domov a řešítě, že nemáte dostatek
+          počítačů, abyste v aktuální situaci pokryli výuku všech vašich dětí?
+          Ať už jste paní učitelka, maminka, nebo spolužák, dejte nám o tom
+          vědět.
         </p>
+        <p className="form__opening__f">Dejme dětem šanci studovat!</p>
       </div>
       <section className="form_sec">
         <div className="form_div">
