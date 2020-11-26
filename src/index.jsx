@@ -8,7 +8,8 @@ import { For } from './components/For/index.jsx';
 import { AboutProject } from './components/AboutProject';
 import { HowItWorks } from './components/HowItWorks/index.jsx';
 import { Form } from './components/Form/index';
-import { Contact } from './components/Contact/index'
+import { Contact } from './components/Contact/index';
+import { Footer } from './components/Footer/index';
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
           <For />
         </Route>
       </Switch>
-      <footer>Czechitas</footer>
+      <Footer />
     </Router>
   );
 };
