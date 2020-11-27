@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
@@ -13,8 +13,7 @@ import { Footer } from './components/Footer/index';
 import { Donate } from './components/Donate/index';
 
 const App = () => {
-  const [formData, setFormData] = useState([])
-  
+  const [formData, setFormData] = useState([]);
 
   return (
     <Router>

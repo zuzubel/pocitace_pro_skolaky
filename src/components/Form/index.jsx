@@ -182,11 +182,31 @@ export const Form = () => {
             {polozky.map((polozka) => (
               <>
                 <div className="result">
-                  <div className="result_items">
-                    <div className="item">{polozka.skola}</div>
-                    <div className="item">{polozka.skola_adresa}</div>
-                    <div className="item">{polozka.poptavam}</div>
-                    <div className="item">{polozka.info}</div>
+                  <div className="result__items">
+                    <div className="result__items--item">
+                      <label className="result__items--label">
+                        Název školy: {''}
+                      </label>
+                      {polozka.skola}
+                    </div>
+                    <div className="result__items--item">
+                      <label className="result__items--label">
+                        Adresa školy: {''}
+                      </label>
+                      {polozka.skola_adresa}
+                    </div>
+                    <div className="result__items--item">
+                      <label className="result__items--label">
+                        Poptávka: {''}
+                      </label>
+                      {polozka.poptavam}
+                    </div>
+                    <div className="result__items--item">
+                      <label className="result__items--label">
+                        Vzkaz: {''}
+                      </label>
+                      {polozka.info}
+                    </div>
                   </div>
                   <div key={polozka.id}>
                     <input
