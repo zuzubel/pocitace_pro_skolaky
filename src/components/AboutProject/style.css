@@ -21,6 +21,7 @@
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  text-align: justify;
 }
 
 .aboutProject--text {
@@ -29,7 +30,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 /* resp. design pro tablety */
 @media screen and (min-width: 480px) and (max-width: 768px) {
@@ -70,6 +70,7 @@
     font-size: 17px;
     text-align: start;
     margin: 40px 40px 40px 60px;
+    text-align: justify;
   }
 
   .aboutProject--foto {
