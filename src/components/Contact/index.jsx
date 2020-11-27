@@ -12,9 +12,7 @@ export const Contact = () => {
         Chcete poskytnout větší množství počítačů?
       </p><hr className="line"/>
       <p className="contact__h last">Máte dotaz?</p>
-      <p className="contact__email">
-        Napište nám: <em className="email">pocitaceproskolaky@gmail.com</em>
-      </p>
+         <a className="contact__email"href="mailto:pocitaceproskolaky@gmail.com">Napište nám: pocitaceproskolaky@gmail.com</a>
     </div>
   );
 };

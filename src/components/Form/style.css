@@ -50,7 +50,7 @@
   font-family: 'Times New Roman', Times, serif;
   font-size: 28px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 0;
   padding: 40px 0 20px 0;
 }
 
@@ -113,6 +113,13 @@
 } */
 
 @media screen and (min-width: 768px) {
+  .form__container {
+    background: url('../img_components/form_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
   .form__opening {
     min-height: 280px;
   }
@@ -122,15 +129,6 @@
   }
 
   .form_sec {
-    background: linear-gradient(
-        to bottom,
-        rgba(242, 242, 242, 0.6),
-        rgba(0, 0, 0, 0)
-      ),
-      url('../img_components/form_img.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
     padding-bottom: 40px;
   }
 
