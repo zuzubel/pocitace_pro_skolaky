@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
@@ -11,10 +11,25 @@ import { Form } from './components/Form/index';
 import { Contact } from './components/Contact/index';
 import { Footer } from './components/Footer/index';
 import { Donate } from './components/Donate/index';
+import { db } from './db';
 
 const App = () => {
-  const [formData, setFormData] = useState([])
-  
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    return db
+      .collection('chci_pocitac')
+      .orderBy('datumVytvoreni')
+      .onSnapshot((querySnapshot) => {
+        setItems(
+          querySnapshot.docs.map((doc) => {
+            const data = doc.data();
+            data.id = doc.id;
+            return data;
+          }),
+        );
+      });
+  }, []);
 
   return (
     <Router>
@@ -25,10 +40,10 @@ const App = () => {
           <HowItWorks />
         </Route>
         <Route path="/donate">
-          <Donate />
+          <Donate items={items} />
         </Route>
         <Route path="/form">
-          <Form />
+          <Form items={items} />
         </Route>
         <Route path="/contact">
           <Contact />

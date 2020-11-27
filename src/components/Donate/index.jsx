@@ -1,7 +1,9 @@
 import React from 'react';
 import './style.css';
 
-export const Donate = () => {
+export const Donate = (props) => {
+  console.log(props.items);
+
   return (
     <div className="donate__containe">
       <div className="donate__opening">
@@ -17,6 +19,17 @@ export const Donate = () => {
         <a className="donate__opening__link" href="">
           Podívejte se, kdo shání počítač.
         </a>
+      </div>
+      <div className="donate__ads">
+        {props.items.map((polozka) => (
+          <>
+            <div>{polozka.skola}</div>
+            <div>{polozka.skola_adresa}</div>
+            <div>{polozka.poptavam}</div>
+            <div>{polozka.info}</div>
+            <div key={polozka.id}></div>
+          </>
+        ))}
       </div>
     </div>
   );

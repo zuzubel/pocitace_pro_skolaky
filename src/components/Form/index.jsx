@@ -3,31 +3,15 @@ import './style.css';
 import { db } from '../../db.js';
 import firebase from 'firebase/app';
 
-export const Form = () => {
-  const [polozky, setPolozky] = useState([]);
-  const [skola, setSkola] = useState('');
-  const [skolaAdresa, setSkolaAdresa] = useState('');
-  const [kontakt, setKontakt] = useState('');
-  const [kontaktEmail, setKontaktEmail] = useState('');
-  const [kontaktTelefon, setKontaktTelefon] = useState('');
-  const [poptavka, setPoptavka] = useState('');
-  const [info, setInfo] = useState('');
+export const Form = (props) => {
+  const [skola, setSkola] = useState('a');
+  const [skolaAdresa, setSkolaAdresa] = useState('a');
+  const [kontakt, setKontakt] = useState('a');
+  const [kontaktEmail, setKontaktEmail] = useState('a@gmail.com');
+  const [kontaktTelefon, setKontaktTelefon] = useState('a');
+  const [poptavka, setPoptavka] = useState('a');
+  const [info, setInfo] = useState('a');
   const [souhlas, setSouhlas] = useState(false);
-
-  useEffect(() => {
-    return db
-      .collection('chci_pocitac')
-      .orderBy('datumVytvoreni')
-      .onSnapshot((querySnapshot) => {
-        setPolozky(
-          querySnapshot.docs.map((doc) => {
-            const data = doc.data();
-            data.id = doc.id;
-            return data;
-          }),
-        );
-      });
-  }, []);
 
   return (
     <>
@@ -179,7 +163,7 @@ export const Form = () => {
           </form>
 
           <ul>
-            {polozky.map((polozka) => (
+            {props.items.map((polozka) => (
               <>
                 <div className="result">
                   <div className="result_items">
