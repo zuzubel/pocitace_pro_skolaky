@@ -113,13 +113,6 @@
 } */
 
 @media screen and (min-width: 768px) {
-  .form__container {
-    background: url('../img_components/form_img.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-
   .form__opening {
     min-height: 280px;
   }
@@ -129,10 +122,17 @@
   }
 
   .form_sec {
+    background: url('../img_components/form_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30% 30%;
     padding-bottom: 40px;
   }
 
   .form_div {
     max-width: 800px;
+  }
+  .btn {
+    width: 30%;
   }
 }
