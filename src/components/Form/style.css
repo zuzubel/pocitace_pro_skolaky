@@ -39,10 +39,6 @@
   font-weight: bold;
 }
 
-.form_sec {
-  display: flex;
-}
-
 .form_div {
   max-width: 320px;
   margin: 0 auto;
@@ -62,10 +58,6 @@
   font-family: Helvetica, Arial, sans-serif;
   margin: 0 10px 0 20px;
   width: 300px;
-}
-
-.form__fields {
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .form__inputs input,
@@ -115,19 +107,6 @@
   padding: 10px;
   text-align: center;
 }
-/*
-
-
-
-  font-size: 16px;
-  align-self: flex-start;
-  margin-left: 82px;
-  margin-top: 8px;
-}
-
-.form__checkbox--p {
-}
-*/
 
 /* stylování nevyplněného pole */
 /* input:required:invalid {
@@ -142,7 +121,7 @@
     padding: 36px 60px 0 60px;
   }
 
- .form_sec {
+  .form_sec {
     background: linear-gradient(
         to bottom,
         rgba(242, 242, 242, 0.6),
@@ -153,5 +132,9 @@
     background-repeat: no-repeat;
     background-position: bottom;
     padding-bottom: 40px;
+  }
+
+  .form_div {
+    max-width: 800px;
   }
 }
