@@ -13,6 +13,9 @@ import { Footer } from './components/Footer/index';
 import { Donate } from './components/Donate/index';
 
 const App = () => {
+  const [formData, setFormData] = useState([])
+  
+
   return (
     <Router>
       <Header />
