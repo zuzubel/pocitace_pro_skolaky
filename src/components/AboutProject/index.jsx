@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 export const AboutProject = () => {
@@ -14,9 +15,20 @@ export const AboutProject = () => {
             Pojďme společně pomoci! Dostaňme nepotřebnou IT techniku ke
             studentům, kteří ji potřebují.
           </p>
+          <div className="aboutProject__buttons">
+            <Link to="/donate">
+              <button className="aboutProject__btn btn__donate">
+                Chci pomoci
+              </button>
+            </Link>
+            <Link to="/form">
+              <button className="aboutProject__btn btn__form">
+                Potřebuji počítač
+              </button>
+            </Link>
+          </div>
         </div>
-        <div className="aboutProject--foto">
-        </div>
+        <div className="aboutProject--foto"></div>
       </div>
     </>
   );
