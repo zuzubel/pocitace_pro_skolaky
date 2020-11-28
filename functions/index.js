@@ -4,7 +4,6 @@ const nodemailer = require('nodemailer');
 const cors = require('cors')({ origin: true });
 admin.initializeApp();
 
-
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -29,10 +28,10 @@ exports.sendMail = functions.https.onRequest((req, res) => {
 
         const mailOptions = {
           from: 'Počítače pro školáky <pocitaceproskolaky@gmail.com>',
-          to: req.body.email,
+          to: req.body.emailRecipient,
           subject: 'Nabídka počítačů',
           text: req.body.message,
-          html: `<p>${req.body.message}</p>`,
+          html: `<div><p>${req.body.emailSender}</p><p>${req.body.name}</p><p>${req.body.message}</p></div>`,
         };
 
         // returning result

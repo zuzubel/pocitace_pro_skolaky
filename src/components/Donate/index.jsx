@@ -1,14 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { db } from '../../db.js';
 import './style.css';
 import { Link } from 'react-router-dom';
-import { DonateForm} from './DonateForm/index.jsx'
-
+import { DonateForm } from './DonateForm/index.jsx';
 
 export const Donate = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-
+  const [selectedContact, setSelectedContact] = useState('');
 
   return (
     <div className="donate__containe">
@@ -60,6 +58,7 @@ export const Donate = (props) => {
                   <button
                     onClick={() => {
                       setIsModalOpen(true);
+                      setSelectedContact(polozka.kontakt_email);
                     }}
                     className="result__button"
                   >
@@ -122,12 +121,19 @@ export const Donate = (props) => {
           </>
         </div>
       </div>
-      <DonateForm isOpen={isModalOpen} closeModal={()=>setIsModalOpen(false)} />
+      <DonateForm
+        isOpen={isModalOpen}
+        closeModal={() => setIsModalOpen(false)}
+        selectedContact={selectedContact}
+      />
     </div>
   );
 };
 
-/*<input
+/*
+  {polozka.kontakt_email}
+
+<input
                   type="checkbox"
                   checked={polozka.vyrizeno}
                   onChange={(event) => {
