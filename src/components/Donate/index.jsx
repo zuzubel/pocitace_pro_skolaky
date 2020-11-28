@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { db } from '../../db.js';
 import './style.css';
+import { Link } from 'react-router-dom';
+import { DonateForm} from './DonateForm/index.jsx'
+
 
 export const Donate = (props) => {
-  console.log(props.items);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
 
   return (
     <div className="donate__containe">
@@ -42,7 +47,7 @@ export const Donate = (props) => {
                   </div>
                   <div className="result__items--item">
                     <label className="result__items--label">
-                      Poptávka: {''}
+                      Poptávka: {''}o
                     </label>
                     {polozka.poptavam}
                   </div>
@@ -52,7 +57,14 @@ export const Donate = (props) => {
                   </div>
                 </div>
                 <div className="result__donate">
-                  <button className="result__button">Chci pomoci</button>
+                  <button
+                    onClick={() => {
+                      setIsModalOpen(true);
+                    }}
+                    className="result__button"
+                  >
+                    Chci pomoci
+                  </button>
                 </div>
               </div>
               <div className="result__checkbox" key={polozka.id}>
@@ -93,17 +105,24 @@ export const Donate = (props) => {
                       </td>
                       <td className="result__table--item">{polozka.info}</td>
                       <td>
-                        <button className="result__button">Chci pomoci</button>
+                        <button
+                          onClick={() => {
+                            setIsModalOpen(true);
+                          }}
+                          className="result__button"
+                        >
+                          Chci pomoci
+                        </button>
                       </td>
                     </tr>
                   </tbody>
                 ))}
               </table>
-              
             </div>
           </>
         </div>
       </div>
+      <DonateForm isOpen={isModalOpen} closeModal={()=>setIsModalOpen(false)} />
     </div>
   );
 };
