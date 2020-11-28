@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 export const HowItWorks = () => {
@@ -8,8 +9,11 @@ export const HowItWorks = () => {
         <h3 className="donate__h">Jak mohu darovat počítač?</h3>
         <div className="donate__steps">
           <div className="donate__step">
-            <div className="donate__step1-img"></div>
-            <p className="donate__p">Vyberete si instituci ZDE</p>
+            <Link to="/donate" className="donate__step1-img"></Link>
+            <Link to="/donate" className="howItWorks__link"><p className="donate__p--link">
+              Vyberete si instituci
+              </p></Link>
+            
           </div>
           <div className="donate__step">
             <div className="donate__step2-img"></div>
@@ -27,8 +31,10 @@ export const HowItWorks = () => {
         <h3 className="apply__h">Jak mohu získat počítač?</h3>
         <div className="appy__steps">
           <div className="apply__step">
-            <div className="apply__step1-img"></div>
-            <p className="apply__p">Vyplňte formulář ZDE</p>
+            <Link to="/form" className="apply__step1-img"></Link>
+            <Link to="/form" className="howItWorks__link">
+              <p className="apply__p--link">Vyplňte formulář</p>
+            </Link>
           </div>
           <div className="apply__step">
             <div className="apply__step2-img"></div>
