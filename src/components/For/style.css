@@ -56,6 +56,7 @@
     flex-shrink: 0;
   }
 
+
   .for__donors,
   .for__schools {
     flex-direction: column;
@@ -108,7 +109,7 @@
   .for__donors--foto,
   .for__schools--foto {
     width: 100%;
-    height: 500px;
+    height: 450px;
   }
 
   .for__donors--foto {
