@@ -34,15 +34,18 @@
 
 .aboutProject__buttons{
   margin: 36px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .aboutProject__btn{
   padding: 16px;
   background-color: transparent;
+  width: 100%;
 }
 
 .btn__form{
-  margin-left: 16px;
+  margin-top: 16px;
 }
 
 /* resp. design pro tablety */
@@ -56,6 +59,15 @@
     text-align: justify;
     font-size: 17px;
   }
+
+  .aboutProject__buttons{
+    flex-direction: row;
+  }
+
+  .btn__form{
+    margin-top: 0;
+    margin-left: 16px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -63,6 +75,9 @@
     display: flex;
     flex-direction: row;
     background-color: transparent;
+  }
+  .btn__form{
+    margin-left: 0;
   }
 
   .aboutProject--text {

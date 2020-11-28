@@ -4,6 +4,65 @@ import { Link } from 'react-router-dom';
 import { db } from '../../db.js';
 import firebase from 'firebase/app';
 
+const regions = [
+  {
+    label: 'Hl. město Praha',
+    value: 'Praha',
+  },
+  {
+    label: 'Jihočeský kraj',
+    value: 'jihočeský',
+  },
+  {
+    label: 'Jihomoravský kraj',
+    value: 'jihomoravský',
+  },
+  {
+    label: 'Karlovarský kraj',
+    value: 'karlovarský',
+  },
+  {
+    label: 'Kraj Vysočina',
+    value: 'vysočina',
+  },
+  {
+    label: 'Královéhradecký kraj',
+    value: 'královehradecký',
+  },
+  {
+    label: 'Liberecký kraj',
+    value: 'liberecký',
+  },
+  {
+    label: 'Moravskoslezský kraj',
+    value: 'moravskoslezský',
+  },
+  {
+    label: 'Olomoucký kraj',
+    value: 'olomoucký',
+  },
+  {
+    label: 'Pardubický kraj',
+    value: 'pardubický',
+  },
+  {
+    label: 'Plzeňský kraj',
+    value: 'plzeňský',
+  },
+  {
+    label: 'Středočeský kraj',
+    value: 'středočeský',
+  },
+  {
+    label: 'Ústecký kraj',
+    value: 'ústecký',
+  },
+  {
+    label: 'Zlínský kraj',
+    value: 'zlínský',
+  },
+];
+
 export const Form = (props) => {
   const [skola, setSkola] = useState('a');
   const [skolaAdresa, setSkolaAdresa] = useState('a');
@@ -14,6 +73,7 @@ export const Form = (props) => {
   const [info, setInfo] = useState('a');
   const [souhlas, setSouhlas] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [region, setRegion] = useState("")
 
   return (
     <>
@@ -84,6 +144,18 @@ export const Form = (props) => {
                       onChange={(event) => setSkolaAdresa(event.target.value)}
                       required
                     />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    Vyberte kraj:{' '}
+                    <select 
+                    value={region}
+                    className="row">
+                      {regions.map((region) => (
+                        <option value={region.value}>{region.label}</option>
+                      ))}
+                    </select>
                   </label>
                 </div>
                 <div className="row">
@@ -168,8 +240,12 @@ export const Form = (props) => {
           </form>
           {submitted ? (
             <p className="submitted__p">
-              Hotovo! Vámi vložené údaje byly zpracovány ve výsledný inzerát, který nyní
-              čeká v sekci <Link className="submitted__link"to="/donate">Chci pomoci</Link> na dárce.
+              Hotovo! Vámi vložené údaje byly zpracovány ve výsledný inzerát,
+              který nyní čeká v sekci{' '}
+              <Link className="submitted__link" to="/donate">
+                Chci pomoci
+              </Link>{' '}
+              na dárce.
             </p>
           ) : null}
         </div>
@@ -242,7 +318,6 @@ export const Form = (props) => {
               </>
             ))}
           </ul>*/
-
 
 //doplňující informace: udělat větší okénko
 //telefon: nastavit jako číslo
