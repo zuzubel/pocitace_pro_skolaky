@@ -17,7 +17,6 @@ Modal.setAppElement('#app');
 
 export const DonateForm = (props) => {
   const [name, setName] = useState('');
-  const [emailRecipient, setEmailRecipient] = useState('');
   const [message, setMessage] = useState('');
   const [emailSender, setEmailSender] = useState('');
 
@@ -26,18 +25,27 @@ export const DonateForm = (props) => {
   };
 
   const sendEmail = () => {
-    fetch('https://us-central1-your-app-name.cloudfunctions.net/submit', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
+    fetch(
+      'https://us-central1-pocitace-pro-skolaky.cloudfunctions.net/sendMail',
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          emailRecipient: props.selectedContact,
+          name: name,
+          message: message,
+          emailSender: emailSender,
+        }),
       },
-      body: JSON.stringify({
-        emailRecipient: props.selectedContact,
-        name: name,
-        message: message,
-        emailSender: emailSender,
-      }),
-    });
+    );
+    console.log({
+      emailRecipient: props.selectedContact,
+      name: name,
+      message: message,
+      emailSender: emailSender,
+    })
   };
 
   return (
