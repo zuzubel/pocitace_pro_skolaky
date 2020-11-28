@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-=======
 import React, { useState, useEffect } from 'react';
->>>>>>> 1fa565d91fc30fb0c0bdde4a023633a7a9b33298
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
