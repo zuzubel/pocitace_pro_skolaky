@@ -102,6 +102,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .rd__mobile {
+    display: none;
+  }
   .donate__opening {
     min-height: 280px;
   }
@@ -113,16 +116,30 @@
   .donate__ads--p {
     font-size: 28px;
   }
+
   .result {
     display: flex;
+    justify-content: space-between;
+    border-radius: 0%;
+    box-shadow: none;
   }
 
-  .result__items {
-    display: flex;
+  .result__table {
+    width: 100%;
+    padding: 10px 30px;
   }
 
-  .result__items--item {
-    display: flex;
-    flex-direction: column;
+   .result__table--header {
+    border: 1px solid white;
+    padding: 10px 0;
+    text-align: Left;
+  }
+
+  .result__button {
+    margin-bottom: 20px;
+  }
+
+  .result__table--item {
+    min-width: 150px;
   }
 }

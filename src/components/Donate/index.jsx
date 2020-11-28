@@ -23,36 +23,39 @@ export const Donate = (props) => {
       </div>
       <div className="donate__ads">
         <p className="donate__ads--p">Vyber, komu pomůžeš</p>
-        {props.items.map((polozka) => (
-          <>
-            <div className="result">
-              <div className="result__items">
-                <div className="result__items--item">
-                  <label className="result__items--label">
-                    Název školy: {''}
-                  </label>
-                  {polozka.skola}
+        <div className="rd__mobile">
+          {props.items.map((polozka) => (
+            <>
+              <div className="result">
+                <div className="result__items">
+                  <div className="result__items--item">
+                    <label className="result__items--label">
+                      Název školy: {''}
+                    </label>
+                    {polozka.skola}
+                  </div>
+                  <div className="result__items--item">
+                    <label className="result__items--label">
+                      Adresa školy: {''}
+                    </label>
+                    {polozka.skola_adresa}
+                  </div>
+                  <div className="result__items--item">
+                    <label className="result__items--label">
+                      Poptávka: {''}
+                    </label>
+                    {polozka.poptavam}
+                  </div>
+                  <div className="result__items--message">
+                    <label className="result__items--label">Vzkaz: {''}</label>
+                    {polozka.info}
+                  </div>
                 </div>
-                <div className="result__items--item">
-                  <label className="result__items--label">
-                    Adresa školy: {''}
-                  </label>
-                  {polozka.skola_adresa}
-                </div>
-                <div className="result__items--item">
-                  <label className="result__items--label">Poptávka: {''}</label>
-                  {polozka.poptavam}
-                </div>
-                <div className="result__items--message">
-                  <label className="result__items--label">Vzkaz: {''}</label>
-                  {polozka.info}
+                <div className="result__donate">
+                  <button className="result__button">Chci pomoci</button>
                 </div>
               </div>
-              <div className="result__donate">
-                <button className="result__button">Chci pomoci</button>
-              </div>
-            </div>
-            <div className="result__checkbox" key={polozka.id}>
+              <div className="result__checkbox" key={polozka.id}>
                 <button
                   className="result__checkbox--btn"
                   onClick={() => {
@@ -62,8 +65,44 @@ export const Donate = (props) => {
                   SMAZAT INZERÁT
                 </button>
               </div>
+            </>
+          ))}
+        </div>
+        <div className="rd__desktop">
+          <>
+            <div className="result">
+              <table className="result__table">
+                <thead className="result__table--headers">
+                  <tr>
+                    <th className="result__table--header">Název školy</th>
+                    <th className="result__table--header">Adresa školy</th>
+                    <th className="result__table--header">Poptávka</th>
+                    <th className="result__table--header">Vzkaz</th>
+                    <th className="result__table--header"></th>
+                  </tr>
+                </thead>
+                {props.items.map((polozka) => (
+                  <tbody className="result_ads">
+                    <tr>
+                      <td className="result__table--item">{polozka.skola}</td>
+                      <td className="result__table--item">
+                        {polozka.skola_adresa}
+                      </td>
+                      <td className="result__table--item">
+                        {polozka.poptavam}
+                      </td>
+                      <td className="result__table--item">{polozka.info}</td>
+                      <td>
+                        <button className="result__button">Chci pomoci</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                ))}
+              </table>
+              
+            </div>
           </>
-        ))}
+        </div>
       </div>
     </div>
   );
@@ -79,6 +118,16 @@ export const Donate = (props) => {
                   }}
                 />
                 
+                <div className="result__checkbox" key={polozka.id}>
+                <button
+                  className="result__checkbox--btn"
+                  onClick={() => {
+                    db.collection('chci_pocitac').doc(polozka.id).delete();
+                  }}
+                >
+                  SMAZAT INZERÁT
+                </button>
+              </div>
                 
-                
+
                 */
