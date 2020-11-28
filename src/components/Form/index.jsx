@@ -73,7 +73,7 @@ export const Form = (props) => {
   const [info, setInfo] = useState('a');
   const [souhlas, setSouhlas] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [region, setRegion] = useState("")
+  const [region, setRegion] = useState('');
 
   return (
     <>
@@ -146,12 +146,14 @@ export const Form = (props) => {
                     />
                   </label>
                 </div>
-                <div className="row">
-                  <label>
+                <div className="div__select">
+                  <label className="form__select__label">
                     Vyberte kraj:{' '}
-                    <select 
-                    value={region}
-                    className="row">
+                    <select
+                      value={region}
+                      onChange={(e) => setRegion(e.target.value)}
+                      className="form__select"
+                    >
                       {regions.map((region) => (
                         <option value={region.value}>{region.label}</option>
                       ))}
