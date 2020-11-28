@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './style.css';
+import { Link } from 'react-router-dom';
 import { db } from '../../db.js';
 import firebase from 'firebase/app';
 
@@ -8,10 +9,11 @@ export const Form = (props) => {
   const [skolaAdresa, setSkolaAdresa] = useState('a');
   const [kontakt, setKontakt] = useState('a');
   const [kontaktEmail, setKontaktEmail] = useState('a@gmail.com');
-  const [kontaktTelefon, setKontaktTelefon] = useState('a');
+  const [kontaktTelefon, setKontaktTelefon] = useState('123123123');
   const [poptavka, setPoptavka] = useState('a');
   const [info, setInfo] = useState('a');
   const [souhlas, setSouhlas] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <>
@@ -57,6 +59,7 @@ export const Form = (props) => {
                 setPoptavka(''),
                 setInfo('');
               setSouhlas(false);
+              setSubmitted(true);
             }}
           >
             <div className="form__fields">
@@ -109,7 +112,9 @@ export const Form = (props) => {
                   <label>
                     Telefon:{' '}
                     <input
+                      title="Pro zadání telefonního čísla, můžete využít tyto formáty: +123 123 123 123, 00123123123, 123123123, 123 123 123"
                       type="tel"
+                      pattern="[+]?[()/0-9. -]{9,}"
                       value={kontaktTelefon}
                       onChange={(event) =>
                         setKontaktTelefon(event.target.value)
@@ -161,6 +166,12 @@ export const Form = (props) => {
               Přidat poptávku
             </button>
           </form>
+          {submitted ? (
+            <p className="submitted__p">
+              Hotovo! Vámi vložené údaje byly zpracovány ve výsledný inzerát, který nyní
+              čeká v sekci <Link className="submitted__link"to="/donate">Chci pomoci</Link> na dárce.
+            </p>
+          ) : null}
         </div>
       </section>
     </>
@@ -176,7 +187,10 @@ export const Form = (props) => {
                 <div>{polozka.kontakt_telefon}</div>
                 
                 
-                <ul>
+              
+          
+
+          {/* <ul>
             {props.items.map((polozka) => (
               <>
                 <div className="result">
@@ -228,3 +242,12 @@ export const Form = (props) => {
               </>
             ))}
           </ul>*/
+
+
+//doplňující informace: udělat větší okénko
+//telefon: nastavit jako číslo
+//přidat povinné položky
+
+// schvovávám, nechceme na stránce vypisovat
+/*                <div>{polozka.kontakt_email}</div>
+                <div>{polozka.kontakt_telefon}</div>*/
