@@ -161,8 +161,22 @@ export const Form = (props) => {
               Přidat poptávku
             </button>
           </form>
+        </div>
+      </section>
+    </>
+  );
+};
 
-          <ul>
+//doplňující informace: udělat větší okénko
+//telefon: nastavit jako číslo
+//přidat povinné položky
+
+// schvovávám, nechceme na stránce vypisovat
+/*                <div>{polozka.kontakt_email}</div>
+                <div>{polozka.kontakt_telefon}</div>
+                
+                
+                <ul>
             {props.items.map((polozka) => (
               <>
                 <div className="result">
@@ -213,17 +227,4 @@ export const Form = (props) => {
                 </div>
               </>
             ))}
-          </ul>
-        </div>
-      </section>
-    </>
-  );
-};
-
-//doplňující informace: udělat větší okénko
-//telefon: nastavit jako číslo
-//přidat povinné položky
-
-// schvovávám, nechceme na stránce vypisovat
-/*                <div>{polozka.kontakt_email}</div>
-                <div>{polozka.kontakt_telefon}</div>*/
+          </ul>*/

@@ -1,4 +1,5 @@
 import React from 'react';
+import { db } from '../../db.js';
 import './style.css';
 
 export const Donate = (props) => {
@@ -21,16 +22,63 @@ export const Donate = (props) => {
         </a>
       </div>
       <div className="donate__ads">
+        <p className="donate__ads--p">Vyber, komu pomůžeš</p>
         {props.items.map((polozka) => (
           <>
-            <div>{polozka.skola}</div>
-            <div>{polozka.skola_adresa}</div>
-            <div>{polozka.poptavam}</div>
-            <div>{polozka.info}</div>
-            <div key={polozka.id}></div>
+            <div className="result">
+              <div className="result__items">
+                <div className="result__items--item">
+                  <label className="result__items--label">
+                    Název školy: {''}
+                  </label>
+                  {polozka.skola}
+                </div>
+                <div className="result__items--item">
+                  <label className="result__items--label">
+                    Adresa školy: {''}
+                  </label>
+                  {polozka.skola_adresa}
+                </div>
+                <div className="result__items--item">
+                  <label className="result__items--label">Poptávka: {''}</label>
+                  {polozka.poptavam}
+                </div>
+                <div className="result__items--message">
+                  <label className="result__items--label">Vzkaz: {''}</label>
+                  {polozka.info}
+                </div>
+              </div>
+              <div className="result__donate">
+                <button className="result__button">Chci pomoci</button>
+              </div>
+            </div>
+            <div className="result__checkbox" key={polozka.id}>
+                <button
+                  className="result__checkbox--btn"
+                  onClick={() => {
+                    db.collection('chci_pocitac').doc(polozka.id).delete();
+                  }}
+                >
+                  SMAZAT INZERÁT
+                </button>
+              </div>
           </>
         ))}
       </div>
     </div>
   );
 };
+
+/*<input
+                  type="checkbox"
+                  checked={polozka.vyrizeno}
+                  onChange={(event) => {
+                    db.collection('chci_pocitac').doc(polozka.id).update({
+                      vyrizeno: event.target.checked,
+                    });
+                  }}
+                />
+                
+                
+                
+                */
