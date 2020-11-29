@@ -3,10 +3,20 @@ import { db } from '../../db.js';
 import './style.css';
 import { Link } from 'react-router-dom';
 import { DonateForm } from './DonateForm/index.jsx';
+import { regions } from '../../config.js';
 
 export const Donate = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedContact, setSelectedContact] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('');
+
+  const filteredPolozky = props.items.filter((polozka) => {
+    if (!selectedRegion) return true;
+    return polozka.region === selectedRegion;
+  });
+
+  console.log(filteredPolozky);
+  console.log(selectedRegion);
 
   return (
     <div className="donate__containe">
@@ -27,7 +37,23 @@ export const Donate = (props) => {
       <div className="donate__ads">
         <p className="donate__ads--p">Vyber, komu pomůžeš</p>
         <div className="rd__mobile">
-          {props.items.map((polozka) => (
+          <div className="div__select">
+            <label className="form__select__label">
+              Vyberte kraj:{' '}
+              <select
+                value={selectedRegion}
+                onChange={(e) => setSelectedRegion(e.target.value)}
+                className="form__select"
+                required
+              >
+                {regions.map((region) => (
+                  <option value={region.value}>{region.label}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          {filteredPolozky.map((polozka) => (
             <>
               <div className="result">
                 <div className="result__items">
@@ -45,7 +71,7 @@ export const Donate = (props) => {
                   </div>
                   <div className="result__items--item">
                     <label className="result__items--label">
-                      Poptávka: {''}o
+                      Poptávka: {''}
                     </label>
                     {polozka.poptavam}
                   </div>
@@ -86,13 +112,32 @@ export const Donate = (props) => {
                 <thead className="result__table--headers">
                   <tr>
                     <th className="result__table--header">Název školy</th>
-                    <th className="result__table--header">Adresa školy</th>
+                    <th className="result__table--header">
+                      Adresa školy
+                      <div className="div__select">
+                        <label className="form__select__label">
+                          Vyberte kraj:{' '}
+                          <select
+                            value={selectedRegion}
+                            onChange={(e) => setSelectedRegion(e.target.value)}
+                            className="form__select"
+                            required
+                          >
+                            {regions.map((region) => (
+                              <option value={region.value}>
+                                {region.label}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                      </div>
+                    </th>
                     <th className="result__table--header">Poptávka</th>
                     <th className="result__table--header">Vzkaz</th>
                     <th className="result__table--header"></th>
                   </tr>
                 </thead>
-                {props.items.map((polozka) => (
+                {filteredPolozky.map((polozka) => (
                   <tbody className="result_ads">
                     <tr>
                       <td className="result__table--item">{polozka.skola}</td>
@@ -114,6 +159,18 @@ export const Donate = (props) => {
                         >
                           Chci pomoci
                         </button>
+                        <div className="result__checkbox" key={polozka.id}>
+                          <button
+                            className="result__checkbox--btn"
+                            onClick={() => {
+                              db.collection('chci_pocitac')
+                                .doc(polozka.id)
+                                .delete();
+                            }}
+                          >
+                            SMAZAT INZERÁT
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
