@@ -141,9 +141,4 @@
   .result__table--item {
     min-width: 150px;
   }
-
-  /* modal open */
-  .ReactModal__Content--after-open {
-    width: 50%;
-  }
 }
