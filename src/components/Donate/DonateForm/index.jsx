@@ -45,7 +45,7 @@ export const DonateForm = (props) => {
       name: name,
       message: message,
       emailSender: emailSender,
-    })
+    });
   };
 
   return (
@@ -56,32 +56,42 @@ export const DonateForm = (props) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <button onClick={props.closeModal}>Zavřít</button>
-        <form>
-          <label>
-            Jméno:
+        <button className="donateForm__close" onClick={props.closeModal}>
+          Zavřít
+        </button>
+        <form className="donateForm">
+          <label className="donateForm__label">
+            Jméno:{' '}
             <input
+              className="donateForm__input"
+              placeholder="Zde zadejte své jméno"
               type="text"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
           </label>
-          <label>
-            Kontakt:
+          <label className="donateForm__label">
+            Kontakt:{' '}
             <input
+              className="donateForm__input"
               type="text"
               placeholder="telefon, e-mail"
               value={emailSender}
               onChange={(event) => setEmailSender(event.target.value)}
+              required
             />
           </label>
+          <label className="donateForm__label">Zpráva: {' '}
           <textarea
+            className="donateForm__input--textarea"
             type="text"
             placeholder="Napište svou nabídku..."
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-          />
-          <button onClick={sendEmail}>Odeslat</button>
+          /></label>
+          <button className="donateForm__send" onClick={sendEmail}>
+            Odeslat
+          </button>
         </form>
       </Modal>
     </div>

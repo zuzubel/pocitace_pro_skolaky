@@ -1,0 +1,73 @@
+/* MODAL STYLING mobile */
+.ReactModal__Overlay--after-open {
+  background-color: #e7e7e6;
+}
+
+.donateForm {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.ReactModal__Content--after-open {
+  width: 80%;
+  border: 3px solid #eac85e !important;
+  line-height: 2;
+}
+
+.donateForm__label {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+}
+
+.donateForm__input {
+  width: 60%;
+  border: 0;
+  border-bottom: 2px solid #eac85e;
+  margin: 0 0 15px 0;
+  height: 30px;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.donateForm__input--textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  border: 0;
+  border-bottom: 2px solid #eac85e;
+  margin: 5px 0 15px 0;
+  height: 30px;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.donateForm__send {
+  padding: 8px 12px;
+  background-color: transparent;
+  width: 30%;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  border: 3px solid #eac85e;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  .ReactModal__Content--after-open {
+    width: 50%;
+  }
+
+  .donateForm{
+    margin: 0 8px;
+  }
+
+  .donateForm__input {
+    width: 40%;
+  }
+
+  .donateForm__input--textarea {
+    width: 80%;
+  }
+}

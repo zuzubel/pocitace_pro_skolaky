@@ -4,6 +4,7 @@ import './style.css';
 import { Link } from 'react-router-dom';
 import { DonateForm } from './DonateForm/index.jsx';
 import { regions } from '../../config.js';
+import './DonateForm/style.css'
 
 export const Donate = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,9 +30,9 @@ export const Donate = (props) => {
           nevyužitým počítačům druhý dech a nabídněte je dál žákům a studentům,
           kterým usnadníte jejich vzdělávání.{' '}
         </p>
-        <a className="donate__opening__link" href="">
+        <p className="donate__opening__lastP">
           Podívejte se, kdo shání počítač.
-        </a>
+        </p>
       </div>
       <div className="donate__ads">
         <p className="donate__ads--p">Vyber, komu pomůžeš</p>
