@@ -63,7 +63,7 @@ const regions = [
   },
 ];
 
-export const Form = (props) => {
+export const Form = () => {
   const [skola, setSkola] = useState('a');
   const [skolaAdresa, setSkolaAdresa] = useState('a');
   const [kontakt, setKontakt] = useState('a');
@@ -102,6 +102,7 @@ export const Form = (props) => {
               db.collection('chci_pocitac').add({
                 skola: skola,
                 skola_adresa: skolaAdresa,
+                region: region,
                 kontaktni_osoba: kontakt,
                 kontakt_email: kontaktEmail,
                 kontakt_telefon: kontaktTelefon,
@@ -118,6 +119,7 @@ export const Form = (props) => {
                 setKontaktTelefon(''),
                 setPoptavka(''),
                 setInfo('');
+              setRegion('');
               setSouhlas(false);
               setSubmitted(true);
             }}
@@ -153,6 +155,7 @@ export const Form = (props) => {
                       value={region}
                       onChange={(e) => setRegion(e.target.value)}
                       className="form__select"
+                      required
                     >
                       {regions.map((region) => (
                         <option value={region.value}>{region.label}</option>
