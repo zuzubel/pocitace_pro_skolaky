@@ -16,12 +16,12 @@ export const AboutProject = () => {
             studentům, kteří ji potřebují.
           </p>
           <div className="aboutProject__buttons">
-            <Link to="/donate">
+            <Link to="/donate" className="btn__link">
               <button className="aboutProject__btn btn__donate">
                 Chci pomoci
               </button>
             </Link>
-            <Link to="/form">
+            <Link to="/form" className="btn__link">
               <button className="aboutProject__btn btn__form">
                 Potřebuji počítač
               </button>
