@@ -10,13 +10,12 @@ export const Donate = (props) => {
   const [selectedContact, setSelectedContact] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
 
-  const filteredPolozky = props.items.filter((polozka) => {
+  const filteredItems = props.items.filter((item) => {
     if (!selectedRegion) return true;
-    return polozka.region === selectedRegion;
+    return item.region === selectedRegion;
   });
 
-  console.log(filteredPolozky);
-  console.log(selectedRegion);
+  console.log(props.items);
 
   return (
     <div className="donate__containe">
@@ -53,7 +52,7 @@ export const Donate = (props) => {
             </label>
           </div>
 
-          {filteredPolozky.map((polozka) => (
+          {filteredItems.map((item) => (
             <>
               <div className="result">
                 <div className="result__items">
@@ -61,30 +60,30 @@ export const Donate = (props) => {
                     <label className="result__items--label">
                       Název školy: {''}
                     </label>
-                    {polozka.skola}
+                    {item.school}
                   </div>
                   <div className="result__items--item">
                     <label className="result__items--label">
                       Adresa školy: {''}
                     </label>
-                    {polozka.skola_adresa}
+                    {item.school_adress}
                   </div>
                   <div className="result__items--item">
                     <label className="result__items--label">
                       Poptávka: {''}
                     </label>
-                    {polozka.poptavam}
+                    {item.request}
                   </div>
                   <div className="result__items--message">
                     <label className="result__items--label">Vzkaz: {''}</label>
-                    {polozka.info}
+                    {item.info}
                   </div>
                 </div>
                 <div className="result__donate">
                   <button
                     onClick={() => {
                       setIsModalOpen(true);
-                      setSelectedContact(polozka.kontakt_email);
+                      setSelectedContact(item.contact_email);
                     }}
                     className="result__button"
                   >
@@ -92,11 +91,11 @@ export const Donate = (props) => {
                   </button>
                 </div>
               </div>
-              <div className="result__checkbox" key={polozka.id}>
+              <div className="result__checkbox" key={item.id}>
                 <button
                   className="result__checkbox--btn"
                   onClick={() => {
-                    db.collection('chci_pocitac').doc(polozka.id).delete();
+                    db.collection('chci_pocitac').doc(item.id).delete();
                   }}
                 >
                   SMAZAT INZERÁT
@@ -137,34 +136,32 @@ export const Donate = (props) => {
                     <th className="result__table--header"></th>
                   </tr>
                 </thead>
-                {filteredPolozky.map((polozka) => (
+                {filteredItems.map((item) => (
                   <tbody className="result_ads">
                     <tr>
-                      <td className="result__table--item">{polozka.skola}</td>
+                      <td className="result__table--item">{item.school}</td>
                       <td className="result__table--item">
-                        {polozka.skola_adresa}
+                        {item.school_adress}
                       </td>
-                      <td className="result__table--item">
-                        {polozka.poptavam}
-                      </td>
-                      <td className="result__table--item">{polozka.info}</td>
+                      <td className="result__table--item">{item.request}</td>
+                      <td className="result__table--item">{item.info}</td>
                       <td>
                         <button
                           onClick={(event) => {
                             event.preventDefault();
                             setIsModalOpen(true);
-                            setSelectedContact(polozka.kontakt_email);
+                            setSelectedContact(item.contact_email);
                           }}
                           className="result__button"
                         >
                           Chci pomoci
                         </button>
-                        <div className="result__checkbox" key={polozka.id}>
+                        <div className="result__checkbox" key={item.id}>
                           <button
                             className="result__checkbox--btn"
                             onClick={() => {
                               db.collection('chci_pocitac')
-                                .doc(polozka.id)
+                                .doc(item.id)
                                 .delete();
                             }}
                           >
@@ -190,23 +187,23 @@ export const Donate = (props) => {
 };
 
 /*
-  {polozka.kontakt_email}
+  {item.contact_email}
 
 <input
                   type="checkbox"
-                  checked={polozka.vyrizeno}
+                  checked={item.state}
                   onChange={(event) => {
-                    db.collection('chci_pocitac').doc(polozka.id).update({
-                      vyrizeno: event.target.checked,
+                    db.collection('chci_pocitac').doc(item.id).update({
+                      state: event.target.checked,
                     });
                   }}
                 />
                 
-                <div className="result__checkbox" key={polozka.id}>
+                <div className="result__checkbox" key={item.id}>
                 <button
                   className="result__checkbox--btn"
                   onClick={() => {
-                    db.collection('chci_pocitac').doc(polozka.id).delete();
+                    db.collection('chci_pocitac').doc(item.id).delete();
                   }}
                 >
                   SMAZAT INZERÁT

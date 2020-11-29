@@ -1,9 +1,3 @@
-
-.form_div{
-justify-content: center;
-align-items: center;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -11,6 +5,7 @@ align-items: center;
   margin-bottom: 36px;
 }
 
+/*úvodní odstavec*/
 .form__opening {
   display: flex;
   flex-direction: column;
@@ -37,23 +32,6 @@ align-items: center;
   line-height: 1.4;
 }
 
-.submitted__p {
-  width: 100%;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.submitted__link {
-  color: black;
-  text-decoration: none;
-  margin-bottom: 36px;
-  border-bottom: 3px solid #eac85e;
-}
-
-.submitted__link:hover {
-  border-bottom: 3px solid transparent;
-}
-
 .form__opening__f {
   padding: 0 16px 36px 16px;
   text-align: center;
@@ -63,11 +41,19 @@ align-items: center;
   font-weight: bold;
 }
 
+/*formulář   justify-content: center;
+  align-items: center;*/
+
 .form_div {
-  max-width: 320px;
-  margin: 0 auto;
-  background: rgba(0 0 0 0.8);
-  border-radius: 5px;
+  width: 80%;
+  margin: 0 10%;
+}
+
+.form_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form_headline {
@@ -86,20 +72,38 @@ align-items: center;
 
 .form__inputs input,
 .form__textarea textarea {
-  margin-bottom: 15px;
-  margin-top: 5px;
-  width: 80%;
   border: 0;
   border-bottom: 2px solid #eac85e;
-  padding: 10px;
-  font-family: Helvetica, Arial, sans-serif;
+  margin: 5px 0 15px 0;
+  width: 100%;
+  height: 30px;
   font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.form__select {
+  border: 0;
+  border-bottom: 2px solid #eac85e;
+  margin: 5px 0 15px 0;
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .form__textarea textarea {
   height: 100px;
 }
 
+.form__checkbox {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+/*tlačítko -- upravit stylování! - jednou btn jednou sumbitted*/
 .btn {
   background: #eac85e;
   border-radius: 5px;
@@ -111,35 +115,21 @@ align-items: center;
   text-transform: uppercase;
 }
 
-.form__checkbox {
-  max-width: 360px;
-  margin: 0 auto;
-}
-
-.form__p {
-  font-family: Arial, Helvetica, sans-serif;
-  padding-top: 10px;
-}
-
-.form__checkbox--p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 270px;
-  margin-top: 5px;
-  padding: 10px;
-  text-align: center;
-}
-
-.form__select {
-  padding: 10px;
-  padding-left: 6px;
-  width: 87%;
-  border: transparent;
-  border-bottom: 2px solid #eac85e;
+.submitted__p {
+  width: 100%;
   font-size: 16px;
-  margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.submitted__link {
+  color: black;
+  text-decoration: none;
+  margin-bottom: 36px;
+  border-bottom: 3px solid #eac85e;
+}
+
+.submitted__link:hover {
+  border-bottom: 3px solid transparent;
 }
 
 @media screen and (min-width: 768px) and (max-width: 990px) {
@@ -151,16 +141,12 @@ align-items: center;
     padding: 36px 60px 0 60px;
   }
 
-  .form_sec {
+  .form_div {
     background: url('../img_components/form_img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: -200px;
     padding-bottom: 40px;
-  }
-
-  .form_div {
-    max-width: 800px;
   }
   .btn {
     width: 30%;
@@ -168,12 +154,11 @@ align-items: center;
 }
 
 @media screen and (min-width: 991px) {
-  .form_sec {
+  .form_div {
     background: url('../img_components/form_img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: -100px;
     padding-bottom: 40px;
   }
-
 }

@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     return db
       .collection('chci_pocitac')
-      .orderBy('datumVytvoreni')
+      .orderBy('date')
       .onSnapshot((querySnapshot) => {
         setItems(
           querySnapshot.docs.map((doc) => {
