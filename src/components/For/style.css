@@ -42,6 +42,7 @@
   border-bottom: 3px solid transparent;
   width: fit-content;
   align-self: center;
+  font-family: 'Fira Sans Condensed';
 }
 
 .for__donors--a,
@@ -55,7 +56,6 @@
     display: flex;
     flex-shrink: 0;
   }
-
 
   .for__donors,
   .for__schools {

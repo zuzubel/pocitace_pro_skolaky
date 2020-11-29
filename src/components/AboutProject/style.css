@@ -10,16 +10,18 @@
 .aboutProject--h {
   text-align: center;
   padding-top: 50px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Fira Sans Condensed';
+  text-transform: uppercase;
   margin: 0;
   font-size: 24px;
+  font-weight: bold;
 }
 
 .aboutProject--p {
   padding: 12px 32px 0 32px;
   text-align: center;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Rubik';
   line-height: 1.4;
   text-align: justify;
   margin-bottom: 0;
@@ -40,12 +42,17 @@
 
 .aboutProject__btn {
   padding: 16px;
-  background-color: transparent;
+  background-color: #eac85e;
   width: 100%;
   font-size: 18px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Fira Sans Condensed';
   border: 3px solid #eac85e;
   cursor: pointer;
+  text-transform: uppercase;
+}
+
+.aboutProject__btn:hover {
+  background-color: white;
 }
 
 .btn__form {
@@ -78,7 +85,7 @@
     margin-top: 0;
   }
 
-  .aboutProject__btn{
+  .aboutProject__btn {
     padding: 16px 8px;
   }
 }
@@ -96,7 +103,7 @@
   .aboutProject--text {
     display: flex;
     width: 50%;
-    background-color:#fcfcfc;
+    background-color: #fcfcfc;
     margin: 0 10px 5px 0;
   }
 
@@ -168,7 +175,7 @@
     justify-content: space-evenly;
   }
 
-  .aboutProject__btn{
+  .aboutProject__btn {
     padding: 16px 8px;
   }
 
