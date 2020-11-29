@@ -55,6 +55,12 @@
   text-transform: uppercase;
 }
 
+.donateForm__submitted{
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 0;
+}
+
 .donateForm__send:hover {
   background: white;
 }

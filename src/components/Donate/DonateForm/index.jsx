@@ -22,10 +22,6 @@ export const DonateForm = (props) => {
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
   const sendEmail = (e) => {
     e.preventDefault();
     fetch(
@@ -45,13 +41,14 @@ export const DonateForm = (props) => {
     )
       .then(() => setSubmitted(true))
       .catch(() => setErrorMessage('Něco se pokazilo. Zkuste to znovu.'));
+      setTimeout(props.closeModal, 5000);
   };
 
   return (
     <div>
       <Modal
         isOpen={props.isOpen}
-        onRequestClose={() => setTimeout(props.closeModal, 3000)}
+        onRequestClose={props.closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
@@ -93,7 +90,7 @@ export const DonateForm = (props) => {
               required
             />
           </label>
-          <p className="donateForm__label">
+          <p className="donateForm__submitted">
             {errorMessage}
             {submitted
               ? 'Úspěšně odesláno. Zájemce o počítač se s Vámi spojí.'
