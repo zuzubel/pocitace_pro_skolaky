@@ -57,7 +57,6 @@ export const DonateForm = (props) => {
         contentLabel="Example Modal"
       >
         <button className="donateForm__close" onClick={props.closeModal}>
-          Zavřít
         </button>
         <form className="donateForm">
           <label className="donateForm__label">
