@@ -115,13 +115,13 @@
   background: white;
 }
 
-.form__select {
+.donate__form--select {
   width: 80%;
   margin: 0 10%;
   margin-top: 5px;
 }
 
-.form__select__label {
+.donate__form--select--label {
   margin: 0 10%;
   font-family: 'Rubik';
 }

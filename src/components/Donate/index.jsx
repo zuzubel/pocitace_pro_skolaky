@@ -109,12 +109,12 @@ export const Donate = (props) => {
         <div className="rd__desktop">
           <>
             <div className="div__select">
-              <label className="form__select__label">
+              <label className="donate__form--select--label">
                 Vyberte kraj:{' '}
                 <select
                   value={selectedRegion}
                   onChange={(e) => setSelectedRegion(e.target.value)}
-                  className="form__select"
+                  className="donate__form--select"
                   required
                 >
                   {regions.map((region) => (
