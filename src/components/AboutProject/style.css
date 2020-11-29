@@ -42,8 +42,9 @@
   padding: 16px;
   background-color: transparent;
   width: 100%;
-  font-size: 17px;
-  border-color: #EAC85E;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  border: 3px solid #eac85e;
 }
 
 .btn__form {
@@ -70,11 +71,15 @@
   }
 
   .btn__link {
-    width: 165px;
+    width: 175px;
   }
 
   .btn__form {
     margin-top: 0;
+  }
+
+  .aboutProject__btn{
+    padding: 16px 8px;
   }
 }
 
@@ -163,6 +168,10 @@
     flex-direction: row;
     width: 400px;
     justify-content: space-evenly;
+  }
+
+  .aboutProject__btn{
+    padding: 16px 8px;
   }
 
   .btn__link {
