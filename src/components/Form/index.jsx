@@ -63,7 +63,7 @@ const regions = [
   },
 ];
 
-export const Form = (props) => {
+export const Form = () => {
   const [skola, setSkola] = useState('a');
   const [skolaAdresa, setSkolaAdresa] = useState('a');
   const [kontakt, setKontakt] = useState('a');
@@ -73,7 +73,7 @@ export const Form = (props) => {
   const [info, setInfo] = useState('a');
   const [souhlas, setSouhlas] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [region, setRegion] = useState("")
+  const [region, setRegion] = useState('');
 
   return (
     <>
@@ -102,6 +102,7 @@ export const Form = (props) => {
               db.collection('chci_pocitac').add({
                 skola: skola,
                 skola_adresa: skolaAdresa,
+                region: region,
                 kontaktni_osoba: kontakt,
                 kontakt_email: kontaktEmail,
                 kontakt_telefon: kontaktTelefon,
@@ -118,6 +119,7 @@ export const Form = (props) => {
                 setKontaktTelefon(''),
                 setPoptavka(''),
                 setInfo('');
+              setRegion('');
               setSouhlas(false);
               setSubmitted(true);
             }}
@@ -146,12 +148,15 @@ export const Form = (props) => {
                     />
                   </label>
                 </div>
-                <div className="row">
-                  <label>
+                <div className="div__select">
+                  <label className="form__select__label">
                     Vyberte kraj:{' '}
-                    <select 
-                    value={region}
-                    className="row">
+                    <select
+                      value={region}
+                      onChange={(e) => setRegion(e.target.value)}
+                      className="form__select"
+                      required
+                    >
                       {regions.map((region) => (
                         <option value={region.value}>{region.label}</option>
                       ))}
