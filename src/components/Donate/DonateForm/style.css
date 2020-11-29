@@ -45,13 +45,18 @@
 
 .donateForm__send {
   padding: 8px 12px;
-  background-color: transparent;
+  background-color: #eac85e;
   width: 30%;
-  font-size: 18px;
-  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
   border: 3px solid #eac85e;
   cursor: pointer;
   align-self: flex-end;
+  text-transform: uppercase;
+}
+
+.donateForm__send:hover {
+  background: white;
 }
 
 .donateForm__close {
@@ -69,6 +74,13 @@
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
+  outline: none;
+  cursor: pointer;
+}
+
+.donateForm__close:hover {
+  width: 25px;
+  height: 25px;
 }
 
 @media screen and (min-width: 768px) {
@@ -86,5 +98,9 @@
 
   .donateForm__input--textarea {
     width: 80%;
+  }
+
+  .ReactModal__Overlay.ReactModal__Overlay--after-open {
+    z-index: 999;
   }
 }
