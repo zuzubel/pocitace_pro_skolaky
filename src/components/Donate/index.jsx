@@ -4,7 +4,7 @@ import './style.css';
 import { Link } from 'react-router-dom';
 import { DonateForm } from './DonateForm/index.jsx';
 import { regions } from '../../config.js';
-import './DonateForm/style.css'
+import './DonateForm/style.css';
 
 export const Donate = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -92,6 +92,7 @@ export const Donate = (props) => {
                   </button>
                 </div>
               </div>
+
               <div className="result__checkbox" key={item.id}>
                 <button
                   className="result__checkbox--btn"
@@ -107,31 +108,27 @@ export const Donate = (props) => {
         </div>
         <div className="rd__desktop">
           <>
+            <div className="div__select">
+              <label className="form__select__label">
+                Vyberte kraj:{' '}
+                <select
+                  value={selectedRegion}
+                  onChange={(e) => setSelectedRegion(e.target.value)}
+                  className="form__select"
+                  required
+                >
+                  {regions.map((region) => (
+                    <option value={region.value}>{region.label}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
             <div className="result">
               <table className="result__table">
                 <thead className="result__table--headers">
                   <tr>
                     <th className="result__table--header">Název školy</th>
-                    <th className="result__table--header">
-                      Adresa školy
-                      <div className="div__select">
-                        <label className="form__select__label">
-                          Vyberte kraj:{' '}
-                          <select
-                            value={selectedRegion}
-                            onChange={(e) => setSelectedRegion(e.target.value)}
-                            className="form__select"
-                            required
-                          >
-                            {regions.map((region) => (
-                              <option value={region.value}>
-                                {region.label}
-                              </option>
-                            ))}
-                          </select>
-                        </label>
-                      </div>
-                    </th>
+                    <th className="result__table--header">Adresa školy</th>
                     <th className="result__table--header">Poptávka</th>
                     <th className="result__table--header">Vzkaz</th>
                     <th className="result__table--header"></th>

@@ -11,7 +11,7 @@ export const Form = () => {
   const [contact, setContact] = useState('a');
   const [contactEmail, setContactEmail] = useState('a@gmail.com');
   const [contactTelephone, setContactTelephone] = useState('123123123');
-  const [request, setRequest] = useState('a');
+  const [request, setRequest] = useState('');
   const [info, setInfo] = useState('');
   const [agreement, setAgreement] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -68,90 +68,91 @@ export const Form = () => {
           >
             <div className="form__inputs">
               <div className="form__inputs--flex">
-              <div className="row">
-                <label>
-                  Název školy:{' '}
-                  <input
-                    type="text"
-                    value={school}
-                    onChange={(event) => setSchool(event.target.value)}
-                    required
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  Adresa školy:{' '}
-                  <input
-                    type="text"
-                    value={schoolAdress}
-                    onChange={(event) => setSchoolAdress(event.target.value)}
-                    required
-                  />
-                </label>
-              </div>
-              <div className="div__select">
-                <label className="form__select__label">
-                  Vyberte kraj:{' '}
-                  <select
-                    value={region}
-                    onChange={(e) => setRegion(e.target.value)}
-                    className="form__select"
-                    required
-                  >
-                    {regions.map((region) => (
-                      <option value={region.value}>{region.label}</option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  Kontaktní osoba:{' '}
-                  <input
-                    type="text"
-                    value={contact}
-                    onChange={(event) => setContact(event.target.value)}
-                    required
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  E-mail:{' '}
-                  <input
-                    type="email"
-                    value={contactEmail}
-                    onChange={(event) => setContactEmail(event.target.value)}
-                    required
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  Telefon:{' '}
-                  <input
-                    title="Pro zadání telefonního čísla, můžete využít tyto formáty: +123 123 123 123, 00123123123, 123123123, 123 123 123"
-                    type="tel"
-                    pattern="[+]?[()/0-9. -]{9,}"
-                    value={contactTelephone}
-                    onChange={(event) =>
-                      setContactTelephone(event.target.value)
-                    }
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <label>
-                  Poptávám:{' '}
-                  <input
-                    type="text"
-                    value={request}
-                    onChange={(event) => setRequest(event.target.value)}
-                    required
-                  />
-                </label>
-              </div>
+                <div className="row">
+                  <label>
+                    Název školy:{' '}
+                    <input
+                      type="text"
+                      value={school}
+                      onChange={(event) => setSchool(event.target.value)}
+                      required
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    Adresa školy:{' '}
+                    <input
+                      type="text"
+                      value={schoolAdress}
+                      onChange={(event) => setSchoolAdress(event.target.value)}
+                      required
+                    />
+                  </label>
+                </div>
+                <div className="div__select">
+                  <label className="form__select__label">
+                    Vyberte kraj:{' '}
+                    <select
+                      value={region}
+                      onChange={(e) => setRegion(e.target.value)}
+                      className="form__select"
+                      required
+                    >
+                      {regions.map((region) => (
+                        <option value={region.value}>{region.label}</option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    Kontaktní osoba:{' '}
+                    <input
+                      type="text"
+                      value={contact}
+                      onChange={(event) => setContact(event.target.value)}
+                      required
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    E-mail:{' '}
+                    <input
+                      type="email"
+                      value={contactEmail}
+                      onChange={(event) => setContactEmail(event.target.value)}
+                      required
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    Telefon:{' '}
+                    <input
+                      title="Pro zadání telefonního čísla, můžete využít tyto formáty: +123 123 123 123, 00123123123, 123123123, 123 123 123"
+                      type="tel"
+                      pattern="[+]?[()/0-9. -]{9,}"
+                      value={contactTelephone}
+                      onChange={(event) =>
+                        setContactTelephone(event.target.value)
+                      }
+                    />
+                  </label>
+                </div>
+                <div className="row">
+                  <label>
+                    Poptávám:{' '}
+                    <input
+                      type="text"
+                      placeholder="Např.: 2x počítač, 4x notebook"
+                      value={request}
+                      onChange={(event) => setRequest(event.target.value)}
+                      required
+                    />
+                  </label>
+                </div>
               </div>
               <div className="form__textarea">
                 <div className="row">

@@ -152,6 +152,8 @@
     width: 50%;
     background-color: #fcfcfc;
     margin: 0 10px 5px 0;
+    border-radius: 4px;
+    max-width: 500px;
   }
 
   .aboutProject--h {
@@ -189,10 +191,12 @@
 
   .aboutProject--foto {
     width: 50%;
+    max-width: 500px;
     background-image: url('../img_components/oProjektu_foto.jpg');
     background-position: 50% 40%;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0 0 5px 10px;
+    border-radius: 4px;
   }
 }
