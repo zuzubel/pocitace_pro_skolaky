@@ -101,6 +101,11 @@
   margin-bottom: 15px;
 }
 
+.ReactModal__Content.ReactModal__Content--after-open {
+  max-width: 80%;
+  border: 2px solid #eac85e;
+}
+
 @media screen and (min-width: 768px) {
   .rd__mobile {
     display: none;
@@ -129,7 +134,7 @@
     padding: 10px 30px;
   }
 
-   .result__table--header {
+  .result__table--header {
     border: 1px solid white;
     padding: 10px 0;
     text-align: Left;

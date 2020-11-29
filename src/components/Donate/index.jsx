@@ -59,7 +59,6 @@ export const Donate = (props) => {
                     onClick={() => {
                       setIsModalOpen(true);
                       setSelectedContact(polozka.kontakt_email);
-                      console.log(polozka.kontakt_email);
                     }}
                     className="result__button"
                   >
@@ -110,7 +109,6 @@ export const Donate = (props) => {
                             event.preventDefault();
                             setIsModalOpen(true);
                             setSelectedContact(polozka.kontakt_email);
-                            console.log(polozka.kontakt_email);
                           }}
                           className="result__button"
                         >
