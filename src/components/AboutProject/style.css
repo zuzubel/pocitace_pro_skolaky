@@ -12,7 +12,7 @@
   padding-top: 50px;
   font-family: 'Times New Roman', Times, serif;
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .aboutProject--p {
@@ -42,9 +42,10 @@
   padding: 16px;
   background-color: transparent;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Times New Roman', Times, serif;
   border: 3px solid #eac85e;
+  cursor: pointer;
 }
 
 .btn__form {
@@ -60,7 +61,6 @@
 
   .aboutProject--p {
     text-align: justify;
-    font-size: 17px;
   }
 
   .aboutProject__buttons {
@@ -102,7 +102,7 @@
 
   .aboutProject--h {
     align-self: center;
-    font-size: 40px;
+    font-size: 24px;
     padding-top: 0;
     margin-top: 40px;
   }
@@ -110,7 +110,7 @@
   .aboutProject--p {
     padding: 0;
     margin: 0;
-    font-size: 17px;
+    font-size: 16px;
     text-align: start;
     margin: 40px 32px 0 32px;
     text-align: justify;
@@ -149,7 +149,6 @@
 
   .aboutProject--h {
     align-self: center;
-    font-size: 40px;
     padding-top: 0;
     margin-top: 40px;
   }
@@ -157,7 +156,6 @@
   .aboutProject--p {
     padding: 0;
     margin: 0;
-    font-size: 17px;
     text-align: start;
     margin: 40px 32px 0 32px;
     text-align: justify;
