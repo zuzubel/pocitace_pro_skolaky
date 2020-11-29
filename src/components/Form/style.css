@@ -1,8 +1,5 @@
 .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 36px;
+  padding-bottom: 40px;
 }
 
 /*úvodní odstavec*/
@@ -60,7 +57,7 @@
   font-family: 'Times New Roman', Times, serif;
   font-size: 28px;
   text-align: center;
-  margin-top: 0;
+  margin: 0;
   padding: 40px 0 20px 0;
 }
 
@@ -79,6 +76,8 @@
   height: 30px;
   font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  padding: 0 10px;
 }
 
 .form__select {
@@ -89,10 +88,13 @@
   height: 30px;
   font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
+  padding: 0 7px;
 }
 
 .form__textarea textarea {
   height: 100px;
+  text-align: justify;
+  padding: 10px 10px;
 }
 
 .form__checkbox {
@@ -103,17 +105,38 @@
   text-align: center;
 }
 
-/*tlačítko -- upravit stylování! - jednou btn jednou sumbitted*/
-.btn {
-  background: #eac85e;
-  border-radius: 5px;
-  font-size: 14px;
-  text-align: center;
+.form__checkbox--p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 270px;
+  margin-top: 5px;
   padding: 10px;
-  cursor: pointer;
-  width: 60%;
-  text-transform: uppercase;
+  text-align: center;
 }
+
+/*tlačítko*/
+.btn {
+  background-color: white;
+  width: 200px;
+  height: 50px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  border: 3px solid #eac85e;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.btn:hover {
+  background: #eac85e;
+}
+
+/*hláška po uložení*/
 
 .submitted__p {
   width: 100%;
@@ -132,6 +155,8 @@
   border-bottom: 3px solid transparent;
 }
 
+/*stylování pro tablety*/
+
 @media screen and (min-width: 768px) and (max-width: 990px) {
   .form__opening {
     min-height: 280px;
@@ -141,24 +166,40 @@
     padding: 36px 60px 0 60px;
   }
 
-  .form_div {
+  .form {
     background: url('../img_components/form_img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: -200px;
+    background-position-x: -150px;
     padding-bottom: 40px;
-  }
-  .btn {
-    width: 30%;
   }
 }
 
-@media screen and (min-width: 991px) {
-  .form_div {
+/*stylování pro notebooky*/
+
+@media screen and (min-width: 991px) and (max-width: 1180px) {
+  .form {
     background: url('../img_components/form_img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: -100px;
     padding-bottom: 40px;
+    background-color: #e7e7e6;
+    background-position-x: -100px;
+  }
+}
+
+/*stylování pro desktop*/
+
+@media screen and (min-width: 1181px) {
+  .form {
+    background: url('../img_components/form_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 40px;
+    background-color: #e7e7e6;
+  }
+
+  .form__inputs {
+    width: 400px;
   }
 }
