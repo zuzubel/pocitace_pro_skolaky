@@ -30,13 +30,12 @@
   line-height: 1.4;
 }
 
-.donate__opening__link {
-  padding: 0 16px 36px 16px;
+.donate__opening__lastP {
+  padding: 0 16px 16px 16px;
   text-align: center;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
-  font-weight: bold;
   text-decoration: none;
   color: black;
   margin: 16px 0;
