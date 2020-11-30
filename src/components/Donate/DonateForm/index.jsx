@@ -61,7 +61,7 @@ export const DonateForm = (props) => {
             Jméno:{' '}
             <input
               className="donateForm__input"
-              placeholder="Zde zadejte své jméno"
+              placeholder="Zadejte své jméno"
               type="text"
               value={name}
               onChange={(event) => setName(event.target.value)}
