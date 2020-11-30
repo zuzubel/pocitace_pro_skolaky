@@ -135,6 +135,7 @@
   text-align: center;
   margin-top: 15px;
   padding: 10px;
+  outline: none;
 }
 
 .btn:hover {

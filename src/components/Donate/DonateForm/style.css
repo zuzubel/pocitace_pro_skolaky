@@ -53,6 +53,7 @@
   align-self: center;
   margin-right: 8px;
   text-transform: uppercase;
+  outline: none;
 }
 
 .donateForm__submitted {

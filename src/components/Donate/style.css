@@ -106,7 +106,7 @@
   border: 3px solid #eac85e;
   cursor: pointer;
   text-align: center;
-
+  outline: none;
   margin: 15px 0;
   padding: 10px;
 }
