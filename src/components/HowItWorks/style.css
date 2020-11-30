@@ -139,6 +139,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 30px;
     width: 80%;
+    max-width: 1000px;
     margin: 0 auto;
     align-items: start;
   }
@@ -156,7 +157,6 @@
     margin: 0;
     padding: 0;
   }
-
 
   .donate__step,
   .apply__step {

@@ -21,9 +21,20 @@ export const DonateForm = (props) => {
   const [emailSender, setEmailSender] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+
+  const onClose = () => {
+    props.closeModal();
+    setSubmitted(false);
+    setName('');
+    setEmailSender('');
+    setMessage('');
+    setErrorMessage('');
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setSubmitting(true);
     fetch(
       'https://us-central1-pocitace-pro-skolaky.cloudfunctions.net/sendMail',
       {
@@ -39,24 +50,23 @@ export const DonateForm = (props) => {
         }),
       },
     )
-      .then(() => setSubmitted(true))
-      .catch(() => setErrorMessage('Něco se pokazilo. Zkuste to znovu.'));
-    setTimeout(props.closeModal, 8000);
+      .then(() => {
+        setSubmitted(true);
+      })
+      .catch(() => setErrorMessage('Něco se pokazilo. Zkuste to znovu.'))
+      .finally(() => setSubmitting(false));
   };
- 
+
   return (
-    <div> 
+    <div>
       <Modal
         isOpen={props.isOpen}
-        onRequestClose={props.closeModal}
+        onRequestClose={onClose}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <button
-          className="donateForm__close"
-          onClick={props.closeModal}
-        ></button>
-        <form className="donateForm">
+        <button className="donateForm__close" onClick={onClose}></button>
+        <form onSubmit={sendEmail} className="donateForm">
           <label className="donateForm__label">
             Jméno:{' '}
             <input
@@ -96,13 +106,20 @@ export const DonateForm = (props) => {
               ? 'Úspěšně odesláno. Zájemce o počítač se s Vámi spojí.'
               : null}
           </p>
-          <button
-            value={submitted}
-            className="donateForm__send"
-            onClick={sendEmail}
-          >
-            {submitted ? 'Odesláno' : 'Odeslat'}
-          </button>
+          {submitted ? (
+            <button onClick={onClose} className="donateForm__send">
+              Zavřít
+            </button>
+          ) : (
+            <button
+              disabled={submitting}
+              type="submit"
+              value={submitted}
+              className="donateForm__send"
+            >
+              {submitting ? 'Odesílám' : 'Odeslat'}
+            </button>
+          )}
         </form>
       </Modal>
     </div>
