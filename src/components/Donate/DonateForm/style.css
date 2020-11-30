@@ -11,6 +11,7 @@
 
 .ReactModal__Content--after-open {
   width: 60%;
+  height: 35%;
   border: 3px solid #eac85e !important;
   line-height: 2;
 }
@@ -54,7 +55,7 @@
   text-transform: uppercase;
 }
 
-.donateForm__submitted{
+.donateForm__submitted {
   font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
   margin-top: 0;
@@ -104,7 +105,7 @@
   .donateForm__input--textarea {
     width: 80%;
   }
-  .donateForm__send{
+  .donateForm__send {
     width: 120px;
   }
 
