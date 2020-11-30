@@ -41,11 +41,11 @@ export const DonateForm = (props) => {
     )
       .then(() => setSubmitted(true))
       .catch(() => setErrorMessage('Něco se pokazilo. Zkuste to znovu.'));
-      setTimeout(props.closeModal, 5000);
+    setTimeout(props.closeModal, 8000);
   };
-
+ 
   return (
-    <div>
+    <div> 
       <Modal
         isOpen={props.isOpen}
         onRequestClose={props.closeModal}

@@ -16,8 +16,6 @@ export const Donate = (props) => {
     return item.region === selectedRegion;
   });
 
-  console.log(props.items);
-
   return (
     <div className="donate__containe">
       <div className="donate__opening">
@@ -136,7 +134,7 @@ export const Donate = (props) => {
                 </thead>
                 {filteredItems.map((item) => (
                   <tbody className="result_ads">
-                    <tr>
+                    <tr className="tableRow">
                       <td className="result__table--item">{item.school}</td>
                       <td className="result__table--item">
                         {item.school_adress}

@@ -186,22 +186,23 @@ export const Form = () => {
             <button type="submit" className="btn">
               Přidat poptávku
             </button>
+            {submitted ? (
+              <p className="submitted__p">
+                Hotovo! Vámi vložené údaje byly zpracovány ve výsledný inzerát,
+                který nyní čeká v sekci{' '}
+                <Link className="submitted__link" to="/donate">
+                  Chci pomoci
+                </Link>{' '}
+                na dárce.
+              </p>
+            ) : null}
           </form>
-          {submitted ? (
-            <p className="submitted__p">
-              Hotovo! Vámi vložené údaje byly zpracovány ve výsledný inzerát,
-              který nyní čeká v sekci{' '}
-              <Link className="submitted__link" to="/donate">
-                Chci pomoci
-              </Link>{' '}
-              na dárce.
-            </p>
-          ) : null}
         </div>
       </section>
     </>
   );
 };
+
 
 //doplňující informace: udělat větší okénko
 //telefon: nastavit jako číslo

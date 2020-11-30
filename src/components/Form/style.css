@@ -64,7 +64,8 @@
   text-transform: uppercase;
 }
 
-.form__inputs {
+.form__inputs,
+.submitted__p {
   font-family: 'Rubik';
   margin: 0 10px 0 20px;
   width: 300px;
@@ -143,9 +144,10 @@
 /*hláška po uložení*/
 
 .submitted__p {
-  width: 100%;
   font-size: 16px;
   font-family: 'Rubik';
+  margin: 23px 0 16px 0;
+  text-align: center;
 }
 
 .submitted__link {
@@ -203,7 +205,8 @@
     background-color: #e7e7e6;
   }
 
-  .form__inputs {
+  .form__inputs,
+  .submitted__p {
     width: 400px;
   }
 }
