@@ -36,12 +36,12 @@ export const Donate = (props) => {
         <p className="donate__ads--p">Vyber, komu pomůžeš</p>
         <div className="rd__mobile">
           <div className="div__select">
-            <label className="form__select__label">
+            <label className="donate__form--select--label">
               Vyberte kraj:{' '}
               <select
                 value={selectedRegion}
                 onChange={(e) => setSelectedRegion(e.target.value)}
-                className="form__select"
+                className="donate__form--select"
                 required
               >
                 {regions.map((region) => (
@@ -141,7 +141,7 @@ export const Donate = (props) => {
                       </td>
                       <td className="result__table--item">{item.request}</td>
                       <td className="result__table--item">{item.info}</td>
-                      <td>
+                      <td className = "result__table--button">
                         <button
                           onClick={(event) => {
                             event.preventDefault();

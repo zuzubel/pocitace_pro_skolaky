@@ -31,11 +31,12 @@ exports.sendMail = functions.https.onRequest((req, res) => {
           to: req.body.emailRecipient,
           subject: 'Nabídka počítačů',
           text: req.body.message,
-          html: `<div><p>Dobrý den, skvělá zpráva! Obdrželi jsme reakci na Váš inzerát: </p>
-          <p>${req.body.message}</p>
-                    <p style ={{fontWeight: "bold"}}>Jméno:${req.body.name}</p>
-          <p>Kontaktní údaje:${req.body.emailSender}</p>
-                   <p>pocitaceproskolaky.netlify.app</p></div>`,
+          html: `<div><p>Dobrý den, máme pro Vás skvělou zprávu! Obdrželi jsme reakci na Váš inzerát: </p>
+          <p><span style="font-weight: bold">Vzkaz od dárce: </span>${req.body.message}</p>
+          <p><span style="font-weight: bold">Jméno dárce: </span>${req.body.name}</p>
+          <p><span style="font-weight: bold">Kontaktní údaje: </span>${req.body.emailSender}</p>
+<p>Teď už je to na Vás! Ozvěte se dárci a domluvte se na předání. 
+<p>pocitaceproskolaky.netlify.app</p></div>`,
         };
 
         // returning result
