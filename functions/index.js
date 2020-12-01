@@ -31,11 +31,11 @@ exports.sendMail = functions.https.onRequest((req, res) => {
           to: req.body.emailRecipient,
           subject: 'Nabídka počítačů',
           text: req.body.message,
-          html: `<div><p>Dobrý den, skvělá zpráva! Obdrželi jsme reakci na Váš inzerát. Přijatou zprávu Vám zasíláme níže.</p>
-          <p>Kontaktní údaje: ${req.body.emailSender}</p>
-          <p>Jméno: ${req.body.name}</p>
+          html: `<div><p>Dobrý den, skvělá zpráva! Obdrželi jsme reakci na Váš inzerát: </p>
           <p>${req.body.message}</p>
-          <p>pocitaceproskolaky.netlify.app</p></div>`,
+                    <p style ={{fontWeight: "bold"}}>Jméno:${req.body.name}</p>
+          <p>Kontaktní údaje:${req.body.emailSender}</p>
+                   <p>pocitaceproskolaky.netlify.app</p></div>`,
         };
 
         // returning result
