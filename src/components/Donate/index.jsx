@@ -141,7 +141,7 @@ export const Donate = (props) => {
                       </td>
                       <td className="result__table--item">{item.request}</td>
                       <td className="result__table--item">{item.info}</td>
-                      <td className = "result__table--button">
+                      <td className="result__table--button">
                         <button
                           onClick={(event) => {
                             event.preventDefault();
