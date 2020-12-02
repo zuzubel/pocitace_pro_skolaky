@@ -17,7 +17,7 @@ export const Donate = (props) => {
     return item.region === selectedRegion;
   });
 
-  const executeOnClick = () => {
+  const expandOnClick = () => {
     setExpanded(!expanded);
   };
 
@@ -152,7 +152,7 @@ export const Donate = (props) => {
                           more="Více..."
                           less="Méně"
                           anchorClass="my-anchor-css-class"
-                          onClick={executeOnClick}
+                          onClick={expandOnClick}
                           expanded={false}
                           width={300}
                         >
