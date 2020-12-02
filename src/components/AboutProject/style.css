@@ -59,7 +59,6 @@
   margin-top: 16px;
 }
 
-/* resp. design pro tablety */
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .aboutProject--h {
     font-size: 32px;

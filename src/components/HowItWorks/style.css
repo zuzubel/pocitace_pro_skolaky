@@ -93,7 +93,7 @@
   background-image: url('../img_components/write.svg');
 }
 
-/* TABLETY */
+
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .donate__step1-img,
   .donate__step2-img,
@@ -132,7 +132,6 @@
   }
 }
 
-/* DESKTOP */
 @media screen and (min-width: 768px) {
   .howItWorks__wrapper {
     display: grid;

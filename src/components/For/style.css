@@ -52,7 +52,6 @@
   border-bottom: 3px solid #eac85e;
 }
 
-/* tablety */
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .for {
     display: flex;

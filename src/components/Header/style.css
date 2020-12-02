@@ -83,7 +83,7 @@ header {
   align-items: center;
 }
 
-/* je třeba změnit font weight na tlustčí,ale fuguje to jen z extrému do extrému. Zkusit stáhnout z google fonts */
+
 .opening {
   font-size: 28px;
   text-align: center;
@@ -103,7 +103,6 @@ header {
   margin: 0;
 }
 
-/* resp. design pro tablety */
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .nav__link {
     font-size: 21px;
@@ -125,7 +124,6 @@ header {
   }
 }
 
-/* responzivní design pro desktop */
 @media screen and (min-width: 768px) {
   .header__left {
     padding: 10px 10px;
