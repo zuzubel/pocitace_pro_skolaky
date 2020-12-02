@@ -180,10 +180,10 @@
 
   .my-anchor-css-class {
     text-decoration: none;
-    color: #eac85e;
+    border-bottom: 2px solid #eac85e;
   }
 
   .my-anchor-css-class:hover {
-    font-weight: bold;
+    border-bottom: 2px solid transparent;
   }
 }

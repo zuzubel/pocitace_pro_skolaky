@@ -152,7 +152,6 @@ export const Donate = (props) => {
                           lines={3}
                           more="Více..."
                           less="Méně"
-                          className="content-css"
                           anchorClass="my-anchor-css-class"
                           onClick={executeOnClick}
                           expanded={false}
