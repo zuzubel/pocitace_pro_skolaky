@@ -170,12 +170,20 @@
 
   .result__button {
     margin-bottom: 20px;
-
   }
 
   .result__table--item {
     min-width: 120px;
     text-align: justify;
     padding: 10px;
+  }
+
+  .my-anchor-css-class {
+    text-decoration: none;
+    color: #eac85e;
+  }
+
+  .my-anchor-css-class:hover {
+    font-weight: bold;
   }
 }
