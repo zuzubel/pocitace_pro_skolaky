@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 import Modal from 'react-modal';
+import TextareaAutosize from 'react-textarea-autosize';
 
 const customStyles = {
   content: {
@@ -91,7 +92,7 @@ export const DonateForm = (props) => {
           </label>
           <label className="donateForm__label">
             Zpráva:{' '}
-            <textarea
+            <TextareaAutosize
               className="donateForm__input--textarea"
               type="text"
               placeholder="Napište svou nabídku..."
