@@ -5,16 +5,22 @@ import { Link } from 'react-router-dom';
 import { DonateForm } from './DonateForm/index.jsx';
 import { regions } from '../../config.js';
 import './DonateForm/style.css';
+import ShowMoreText from 'react-show-more-text';
 
 export const Donate = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedContact, setSelectedContact] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
+  const [expanded, setExpanded] = useState('true');
 
   const filteredItems = props.items.filter((item) => {
     if (!selectedRegion) return true;
     return item.region === selectedRegion;
   });
+
+  const executeOnClick = () => {
+    setExpanded(!expanded);
+  };
 
   return (
     <div className="donate__containe">
@@ -140,7 +146,22 @@ export const Donate = (props) => {
                         {item.school_adress}
                       </td>
                       <td className="result__table--item">{item.request}</td>
-                      <td className="result__table--item">{item.info}</td>
+
+                      <td className="result__table--item">
+                        <ShowMoreText
+                          lines={3}
+                          more="Více..."
+                          less="Méně"
+                          className="content-css"
+                          anchorClass="my-anchor-css-class"
+                          onClick={executeOnClick}
+                          expanded={false}
+                          width={300}
+                        >
+                          {item.info}
+                        </ShowMoreText>
+                      </td>
+
                       <td className="result__table--button">
                         <button
                           onClick={(event) => {

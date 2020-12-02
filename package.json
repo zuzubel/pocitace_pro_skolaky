@@ -28,6 +28,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.12.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-show-more": "^2.0.0",
+    "react-show-more-text": "^1.4.6"
   }
 }

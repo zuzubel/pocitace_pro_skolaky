@@ -18,3 +18,5 @@ export const Footer = () => {
     </>
   );
 };
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere atque voluptate laudantium placeat harum at voluptatem, suscipit minus nobis et. Sint, harum error! Similique blanditiis tempore voluptatem facere nulla, recusandae deserunt delectus repellat libero amet quaerat tempora, voluptas explicabo odio perferendis impedit reiciendis nesciunt consequuntur illo eligendi nostrum ea ab! Beatae tempora animi nulla! Debitis ullam blanditiis sequi sit, soluta culpa itaque atque exercitationem similique laudantium? Assumenda rerum fuga laborum soluta eos! Quis necessitatibus libero dolore nemo aut quae rerum.</p>
