@@ -10,7 +10,9 @@ export const Form = () => {
   const [school, setSchool] = useState('a');
   const [schoolAdress, setSchoolAdress] = useState('a');
   const [contact, setContact] = useState('a');
-  const [contactEmail, setContactEmail] = useState('a@gmail.com');
+  const [contactEmail, setContactEmail] = useState(
+    'pocitaceproskolaky@gmail.com',
+  );
   const [contactTelephone, setContactTelephone] = useState('123123123');
   const [request, setRequest] = useState('');
   const [info, setInfo] = useState('');
