@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { db } from '../../db.js';
 import './style.css';
-import { Link } from 'react-router-dom';
 import { DonateForm } from './DonateForm/index.jsx';
 import { regions } from '../../config.js';
 import './DonateForm/style.css';
