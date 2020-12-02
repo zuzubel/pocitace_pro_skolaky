@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { db } from '../../db.js';
 import firebase from 'firebase/app';
 import { regions } from '../../config.js';
+import TextareaAutosize from 'react-textarea-autosize';
 
 export const Form = () => {
   const [school, setSchool] = useState('a');
@@ -157,7 +158,7 @@ export const Form = () => {
               <div className="form__textarea">
                 <div className="row">
                   <label>
-                    <textarea
+                    <TextareaAutosize
                       type="text"
                       placeholder="Zde vložte dopňující informace a zvyšte tak šanci, že právě vaše přání bude vyslyšeno."
                       value={info}
@@ -202,7 +203,6 @@ export const Form = () => {
     </>
   );
 };
-
 
 //doplňující informace: udělat větší okénko
 //telefon: nastavit jako číslo
