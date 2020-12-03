@@ -1,5 +1,9 @@
 export const regions = [  
   {
+    label: 'Vyberte region',
+    value: '',
+  },
+  {
     label: 'Hl. město Praha',
     value: 'praha',
   },
