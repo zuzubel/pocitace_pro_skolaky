@@ -13,7 +13,7 @@ export const Donate = (props) => {
   const [selectedRegion, setSelectedRegion] = useState('');
   const [expanded, setExpanded] = useState('true');
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(2);
+  const [postsPerPage, setPostsPerPage] = useState(5);
 
   //filter regions
   const filteredItems = props.items.filter((item) => {
