@@ -13,13 +13,13 @@ export const Pagination = (props) => {
       <ul className="pagination">
         {pageNumbers.map((number) => (
           <li key={number} className="page-item">
-            <a
+            <button
               onClick={() => props.paginate(number)}
               href="!#"
               className="page-link"
             >
               {number}
-            </a>
+            </button>
           </li>
         ))}
       </ul>
