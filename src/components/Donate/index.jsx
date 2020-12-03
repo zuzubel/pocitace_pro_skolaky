@@ -5,21 +5,34 @@ import { DonateForm } from './DonateForm/index.jsx';
 import { regions } from '../../config.js';
 import './DonateForm/style.css';
 import ShowMoreText from 'react-show-more-text';
+import { Pagination } from '../Pagination/index.jsx';
 
 export const Donate = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedContact, setSelectedContact] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
   const [expanded, setExpanded] = useState('true');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(2);
 
+  //filter regions
   const filteredItems = props.items.filter((item) => {
     if (!selectedRegion) return true;
     return item.region === selectedRegion;
   });
 
+  //expand text in ads
   const expandOnClick = () => {
     setExpanded(!expanded);
   };
+
+  //get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredItems.slice(indexOfFirstPost, indexOfLastPost);
+
+  //change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="donate__containe">
@@ -53,7 +66,7 @@ export const Donate = (props) => {
             </select>
           </div>
 
-          {filteredItems.map((item) => (
+          {currentPosts.map((item) => (
             <>
               <div className="result">
                 <div className="result__items">
@@ -105,6 +118,11 @@ export const Donate = (props) => {
               </div>
             </>
           ))}
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={filteredItems.length}
+            paginate={paginate}
+          />
         </div>
         <div className="rd__desktop">
           <>
@@ -131,7 +149,7 @@ export const Donate = (props) => {
                     <th className="result__table--header"></th>
                   </tr>
                 </thead>
-                {filteredItems.map((item) => (
+                {currentPosts.map((item) => (
                   <tbody className="result_ads">
                     <tr className="tableRow">
                       <td className="result__table--item">{item.school}</td>
@@ -183,6 +201,11 @@ export const Donate = (props) => {
                 ))}
               </table>
             </div>
+            <Pagination
+              postsPerPage={postsPerPage}
+              totalPosts={filteredItems.length}
+              paginate={paginate}
+            />
           </>
         </div>
       </div>
