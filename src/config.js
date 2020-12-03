@@ -1,7 +1,7 @@
 export const regions = [  
   {
     label: 'Hl. město Praha',
-    value: 'Praha',
+    value: 'praha',
   },
   {
     label: 'Jihočeský kraj',
