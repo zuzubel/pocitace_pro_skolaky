@@ -41,19 +41,16 @@ export const Donate = (props) => {
         <p className="donate__ads--p">Vyber, komu pomůžeš</p>
         <div className="rd__mobile">
           <div className="div__select">
-            <label className="donate__form--select--label">
-              Vyberte kraj:{' '}
-              <select
-                value={selectedRegion}
-                onChange={(e) => setSelectedRegion(e.target.value)}
-                className="donate__form--select"
-                required
-              >
-                {regions.map((region) => (
-                  <option value={region.value}>{region.label}</option>
-                ))}
-              </select>
-            </label>
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className="donate__form--select"
+              required
+            >
+              {regions.map((region) => (
+                <option value={region.value}>{region.label}</option>
+              ))}
+            </select>
           </div>
 
           {filteredItems.map((item) => (
@@ -112,19 +109,16 @@ export const Donate = (props) => {
         <div className="rd__desktop">
           <>
             <div className="div__select">
-              <label className="donate__form--select--label">
-                Vyberte kraj:{' '}
-                <select
-                  value={selectedRegion}
-                  onChange={(e) => setSelectedRegion(e.target.value)}
-                  className="donate__form--select"
-                  required
-                >
-                  {regions.map((region) => (
-                    <option value={region.value}>{region.label}</option>
-                  ))}
-                </select>
-              </label>
+              <select
+                value={selectedRegion}
+                onChange={(e) => setSelectedRegion(e.target.value)}
+                className="donate__form--select desktop"
+                required
+              >
+                {regions.map((region) => (
+                  <option value={region.value}>{region.label}</option>
+                ))}
+              </select>
             </div>
             <div className="result">
               <table className="result__table">
