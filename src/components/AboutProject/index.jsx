@@ -17,8 +17,8 @@ export const AboutProject = () => {
             děti se ve valné většině případů nedostalo.
           </p>
           <p className="aboutProject--p">
-            Pojďme dostat nevyužitou IT techniku, která nám často leží doma ve
-            sklepě nebo ve firemním skladu, k dětem, které ji teď opravdu
+            Pojďme dostat nevyužité počítače, které nám často leží doma ve
+            sklepě nebo ve firemním skladu, k dětem, které je teď opravdu
             potřebují.
           </p>
           <div className="aboutProject__buttons">
