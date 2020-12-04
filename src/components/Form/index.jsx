@@ -164,6 +164,8 @@ export const Form = () => {
                       type="text"
                       placeholder="Zde vložte dopňující informace a zvyšte tak šanci, že právě vaše přání bude vyslyšeno."
                       value={info}
+                      minRows={4}
+                      maxRows={10}
                       onChange={(event) => setInfo(event.target.value)}
                     />
                   </label>
@@ -205,4 +207,3 @@ export const Form = () => {
     </>
   );
 };
-

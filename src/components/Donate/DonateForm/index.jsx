@@ -96,6 +96,8 @@ export const DonateForm = (props) => {
               className="donateForm__input--textarea"
               type="text"
               placeholder="Napište svou nabídku..."
+              minRows={1}
+              maxRows={8}
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               required
