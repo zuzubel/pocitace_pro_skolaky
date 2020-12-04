@@ -160,7 +160,7 @@
 
   .result__table {
     width: 100%;
-    margin: 10px 30px 30px 30px;
+    margin: 10px 30px 0 30px;
     border-collapse: collapse;
   }
 
@@ -191,14 +191,14 @@
     border-bottom: 2px solid #eac85e;
   }
 
-  .my-anchor-css-class:active{
+  .my-anchor-css-class:active {
     color: black;
   }
 
   .my-anchor-css-class:hover {
     border-bottom: 2px solid transparent;
   }
-  .donate__form--select{
+  .donate__form--select {
     width: 28%;
     padding-left: 25px;
     outline: none;
