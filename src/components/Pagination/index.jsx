@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
+
+
 
 export const Pagination = (props) => {
   const pageNumbers = [];

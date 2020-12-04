@@ -9,11 +9,17 @@ export const AboutProject = () => {
         <div className="aboutProject--text">
           <p className="aboutProject--h">O projektu</p>
           <p className="aboutProject--p">
-            Pandemie koronaviru přenusula studium do online prostředí. Mnoho
-            žáků a studentů ale nemá vyhovující podmínky a každým dnem jim tak
-            utíká část výuky. Tuto zrátu budou po návratu do škol stěží dohánět.
-            Pojďme společně pomoci! Dostaňme nepotřebnou IT techniku ke
-            studentům, kteří ji potřebují.
+            Pandemie koronaviru přesunula studium do online prostředí. Na jaře
+            při její první vlně zůstalo podle Ministerstva školství{' '}
+            <strong>10 000 dětí bez přístupu k počítači</strong> a nemohlo se
+            online vzdělávání účastnit. V létě dostaly školy 1,3 mld Kč na nákup
+            techniky, tyto prostředky však pokryly pouze požadavky učitelů. Na
+            děti se ve valné většině případů nedostalo.
+          </p>
+          <p className="aboutProject--p">
+            Pojďme dostat nevyužitou IT techniku, která nám často leží doma ve
+            sklepě nebo ve firemním skladu, k dětem, které ji teď opravdu
+            potřebují.
           </p>
           <div className="aboutProject__buttons">
             <Link to="/donate" className="btn__link">
