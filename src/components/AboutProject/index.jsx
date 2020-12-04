@@ -12,9 +12,7 @@ export const AboutProject = () => {
             Pandemie koronaviru přesunula studium do online prostředí. Na jaře
             při její první vlně zůstalo podle Ministerstva školství{' '}
             <strong>10 000 dětí bez přístupu k počítači</strong> a nemohlo se
-            online vzdělávání účastnit. V létě dostaly školy 1,3 mld Kč na nákup
-            techniky, tyto prostředky však pokryly pouze požadavky učitelů. Na
-            děti se ve valné většině případů nedostalo.
+            online vzdělávání účastnit.
           </p>
           <p className="aboutProject--p">
             Pojďme dostat nevyužité počítače, které nám často leží doma ve
