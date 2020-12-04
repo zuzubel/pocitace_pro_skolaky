@@ -106,7 +106,7 @@ export const Donate = (props) => {
                 </div>
               </div>
 
-              <div className="result__checkbox" key={item.id}>
+             {/*  <div className="result__checkbox" key={item.id}>
                 <button
                   className="result__checkbox--btn"
                   onClick={() => {
@@ -115,7 +115,7 @@ export const Donate = (props) => {
                 >
                   SMAZAT INZERÁT
                 </button>
-              </div>
+              </div> */}
             </>
           ))}
           <Pagination
@@ -183,7 +183,7 @@ export const Donate = (props) => {
                         >
                           Chci pomoci
                         </button>
-                        <div className="result__checkbox" key={item.id}>
+                        {/* <div className="result__checkbox" key={item.id}>
                           <button
                             className="result__checkbox--btn"
                             onClick={() => {
@@ -194,7 +194,7 @@ export const Donate = (props) => {
                           >
                             SMAZAT INZERÁT
                           </button>
-                        </div>
+                        </div> */}
                       </td>
                     </tr>
                   </tbody>
