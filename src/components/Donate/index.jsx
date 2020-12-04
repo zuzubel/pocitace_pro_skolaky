@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { db } from '../../db.js';
 import './style.css';
 import { DonateForm } from './DonateForm/index.jsx';
 import { regions } from '../../config.js';

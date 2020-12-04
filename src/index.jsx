@@ -48,7 +48,7 @@ const App = () => {
         <Route path="/contact">
           <Contact />
         </Route>
-        <Route path="/">
+        <Route path="/home">
           <For />
         </Route>
       </Switch>
