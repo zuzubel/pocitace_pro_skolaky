@@ -10,7 +10,7 @@ export const Donate = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedContact, setSelectedContact] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
-  const [expanded, setExpanded] = useState('true');
+
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(5);
 
@@ -19,11 +19,6 @@ export const Donate = (props) => {
     if (!selectedRegion) return true;
     return item.region === selectedRegion;
   });
-
-  //expand text in ads
-  const expandOnClick = () => {
-    setExpanded(!expanded);
-  };
 
   //get current posts
   const indexOfLastPost = currentPage * postsPerPage;
@@ -105,7 +100,7 @@ export const Donate = (props) => {
                 </div>
               </div>
 
-             {/*  <div className="result__checkbox" key={item.id}>
+              {/*  <div className="result__checkbox" key={item.id}>
                 <button
                   className="result__checkbox--btn"
                   onClick={() => {
@@ -163,7 +158,6 @@ export const Donate = (props) => {
                           more="Více..."
                           less="Méně"
                           anchorClass="my-anchor-css-class"
-                          onClick={expandOnClick}
                           expanded={false}
                           width={300}
                         >
