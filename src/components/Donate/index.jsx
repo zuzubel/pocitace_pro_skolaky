@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import { DonateForm } from './DonateForm/index.jsx';
 import { regions } from '../../config.js';
 import './DonateForm/style.css';
 import ShowMoreText from 'react-show-more-text';
 import { Pagination } from '../Pagination/index.jsx';
+import { db } from '../../db';
 
 export const Donate = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,9 +14,10 @@ export const Donate = (props) => {
   const [expanded, setExpanded] = useState('true');
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(5);
+  const [items, setItems] = useState([]);
 
   //filter regions
-  const filteredItems = props.items.filter((item) => {
+  const filteredItems = items.filter((item) => {
     if (!selectedRegion) return true;
     return item.region === selectedRegion;
   });
@@ -30,8 +32,42 @@ export const Donate = (props) => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredItems.slice(indexOfFirstPost, indexOfLastPost);
 
-  //change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  //load more posts
+  const loadMore = () => {
+    var lastVisible = items[items.length - 1];
+    console.log('last', lastVisible);
+    var next = db
+      .collection('chci_pocitac')
+      .orderBy('date', 'desc')
+      .startAfter(lastVisible)
+      .limit(5)
+      .get()
+      .then((querySnapshot) => {
+        console.log(querySnapshot);
+        setItems(
+          querySnapshot.docs.map((doc) => {
+            const data = doc.data();
+            data.id = doc.id;
+            return data;
+          }),
+        );
+      });
+  };
+
+  useEffect(() => {
+    db.collection('chci_pocitac')
+      .orderBy('date', 'desc')
+      .limit(5)
+      .onSnapshot((querySnapshot) => {
+        setItems(
+          querySnapshot.docs.map((doc) => {
+            const data = doc.data();
+            data.id = doc.id;
+            return data;
+          }),
+        );
+      });
+  }, [currentPage]);
 
   return (
     <div className="donate__containe">
@@ -105,7 +141,7 @@ export const Donate = (props) => {
                 </div>
               </div>
 
-             {/*  <div className="result__checkbox" key={item.id}>
+              {/*  <div className="result__checkbox" key={item.id}>
                 <button
                   className="result__checkbox--btn"
                   onClick={() => {
@@ -117,11 +153,12 @@ export const Donate = (props) => {
               </div> */}
             </>
           ))}
-          <Pagination
+          {/*           <Pagination
             postsPerPage={postsPerPage}
             totalPosts={filteredItems.length}
-            paginate={paginate}
-          />
+            paginate={setCurrentPage}
+          /> */}
+          <button onClick={loadMore}>Načíst další</button>
         </div>
         <div className="rd__desktop">
           <>
@@ -203,7 +240,7 @@ export const Donate = (props) => {
             <Pagination
               postsPerPage={postsPerPage}
               totalPosts={filteredItems.length}
-              paginate={paginate}
+              paginate={setCurrentPage}
             />
           </>
         </div>
