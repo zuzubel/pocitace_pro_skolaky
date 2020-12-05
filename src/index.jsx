@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import { Header } from './components/Header/index.jsx';
 import { For } from './components/For/index.jsx';
 import { AboutProject } from './components/AboutProject';
@@ -19,7 +24,7 @@ const App = () => {
   useEffect(() => {
     return db
       .collection('chci_pocitac')
-      .orderBy('date', "desc")
+      .orderBy('date', 'desc')
       .onSnapshot((querySnapshot) => {
         setItems(
           querySnapshot.docs.map((doc) => {
@@ -35,6 +40,7 @@ const App = () => {
     <Router>
       <Header />
       <Switch>
+        <Redirect exact from="/" to="/home" />
         <Route path="/about_project">
           <AboutProject />
           <HowItWorks />
