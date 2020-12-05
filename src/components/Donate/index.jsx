@@ -4,53 +4,31 @@ import { DonateForm } from './DonateForm/index.jsx';
 import { regions } from '../../config.js';
 import './DonateForm/style.css';
 import ShowMoreText from 'react-show-more-text';
-import { Pagination } from '../Pagination/index.jsx';
 import { db } from '../../db';
 
-export const Donate = (props) => {
+export const Donate = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedContact, setSelectedContact] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
-  const [expanded, setExpanded] = useState('true');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(5);
   const [items, setItems] = useState([]);
 
   //filter regions
   const filteredItems = items.filter((item) => {
     if (!selectedRegion) return true;
-    return item.region === selectedRegion;
+    return item.data().region === selectedRegion;
   });
-
-  //expand text in ads
-  const expandOnClick = () => {
-    setExpanded(!expanded);
-  };
-
-  //get current posts
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = filteredItems.slice(indexOfFirstPost, indexOfLastPost);
 
   //load more posts
   const loadMore = () => {
-    var lastVisible = items[items.length - 1];
+    const lastVisible = items[items.length - 1];
     console.log('last', lastVisible);
-    var next = db
-      .collection('chci_pocitac')
+    db.collection('chci_pocitac')
       .orderBy('date', 'desc')
       .startAfter(lastVisible)
       .limit(5)
       .get()
       .then((querySnapshot) => {
-        console.log(querySnapshot);
-        setItems(
-          querySnapshot.docs.map((doc) => {
-            const data = doc.data();
-            data.id = doc.id;
-            return data;
-          }),
-        );
+        setItems([...items, ...querySnapshot.docs]);
       });
   };
 
@@ -59,15 +37,9 @@ export const Donate = (props) => {
       .orderBy('date', 'desc')
       .limit(5)
       .onSnapshot((querySnapshot) => {
-        setItems(
-          querySnapshot.docs.map((doc) => {
-            const data = doc.data();
-            data.id = doc.id;
-            return data;
-          }),
-        );
+        setItems(querySnapshot.docs);
       });
-  }, [currentPage]);
+  }, []);
 
   return (
     <div className="donate__containe">
@@ -101,47 +73,51 @@ export const Donate = (props) => {
             </select>
           </div>
 
-          {currentPosts.map((item) => (
-            <>
-              <div className="result">
-                <div className="result__items">
-                  <div className="result__items--item">
-                    <label className="result__items--label">
-                      Název školy: {''}
-                    </label>
-                    {item.school}
+          {filteredItems.map((post) => {
+            const item = post.data();
+            return (
+              <>
+                <div className="result">
+                  <div className="result__items">
+                    <div className="result__items--item">
+                      <label className="result__items--label">
+                        Název školy: {''}
+                      </label>
+                      {item.school}
+                    </div>
+                    <div className="result__items--item">
+                      <label className="result__items--label">
+                        Adresa školy: {''}
+                      </label>
+                      {item.school_adress}
+                    </div>
+                    <div className="result__items--item">
+                      <label className="result__items--label">
+                        Poptávka: {''}
+                      </label>
+                      {item.request}
+                    </div>
+                    <div className="result__items--message">
+                      <label className="result__items--label">
+                        Vzkaz: {''}
+                      </label>
+                      {item.info}
+                    </div>
                   </div>
-                  <div className="result__items--item">
-                    <label className="result__items--label">
-                      Adresa školy: {''}
-                    </label>
-                    {item.school_adress}
-                  </div>
-                  <div className="result__items--item">
-                    <label className="result__items--label">
-                      Poptávka: {''}
-                    </label>
-                    {item.request}
-                  </div>
-                  <div className="result__items--message">
-                    <label className="result__items--label">Vzkaz: {''}</label>
-                    {item.info}
+                  <div className="result__donate">
+                    <button
+                      onClick={() => {
+                        setIsModalOpen(true);
+                        setSelectedContact(item.contact_email);
+                      }}
+                      className="result__button"
+                    >
+                      Chci pomoci
+                    </button>
                   </div>
                 </div>
-                <div className="result__donate">
-                  <button
-                    onClick={() => {
-                      setIsModalOpen(true);
-                      setSelectedContact(item.contact_email);
-                    }}
-                    className="result__button"
-                  >
-                    Chci pomoci
-                  </button>
-                </div>
-              </div>
 
-              {/*  <div className="result__checkbox" key={item.id}>
+                {/*  <div className="result__checkbox" key={item.id}>
                 <button
                   className="result__checkbox--btn"
                   onClick={() => {
@@ -151,8 +127,9 @@ export const Donate = (props) => {
                   SMAZAT INZERÁT
                 </button>
               </div> */}
-            </>
-          ))}
+              </>
+            );
+          })}
           {/*           <Pagination
             postsPerPage={postsPerPage}
             totalPosts={filteredItems.length}
@@ -185,41 +162,42 @@ export const Donate = (props) => {
                     <th className="result__table--header"></th>
                   </tr>
                 </thead>
-                {currentPosts.map((item) => (
-                  <tbody className="result_ads">
-                    <tr className="tableRow">
-                      <td className="result__table--item">{item.school}</td>
-                      <td className="result__table--item">
-                        {item.school_adress}
-                      </td>
-                      <td className="result__table--item">{item.request}</td>
+                {filteredItems.map((post) => {
+                  const item = post.data();
+                  return (
+                    <tbody className="result_ads">
+                      <tr className="tableRow">
+                        <td className="result__table--item">{item.school}</td>
+                        <td className="result__table--item">
+                          {item.school_adress}
+                        </td>
+                        <td className="result__table--item">{item.request}</td>
 
-                      <td className="result__table--item">
-                        <ShowMoreText
-                          lines={3}
-                          more="Více..."
-                          less="Méně"
-                          anchorClass="my-anchor-css-class"
-                          onClick={expandOnClick}
-                          expanded={false}
-                          width={300}
-                        >
-                          {item.info}
-                        </ShowMoreText>
-                      </td>
+                        <td className="result__table--item">
+                          <ShowMoreText
+                            lines={3}
+                            more="Více..."
+                            less="Méně"
+                            anchorClass="my-anchor-css-class"
+                            expanded={false}
+                            width={300}
+                          >
+                            {item.info}
+                          </ShowMoreText>
+                        </td>
 
-                      <td className="result__table--button">
-                        <button
-                          onClick={(event) => {
-                            event.preventDefault();
-                            setIsModalOpen(true);
-                            setSelectedContact(item.contact_email);
-                          }}
-                          className="result__button"
-                        >
-                          Chci pomoci
-                        </button>
-                        {/* <div className="result__checkbox" key={item.id}>
+                        <td className="result__table--button">
+                          <button
+                            onClick={(event) => {
+                              event.preventDefault();
+                              setIsModalOpen(true);
+                              setSelectedContact(item.contact_email);
+                            }}
+                            className="result__button"
+                          >
+                            Chci pomoci
+                          </button>
+                          {/* <div className="result__checkbox" key={item.id}>
                           <button
                             className="result__checkbox--btn"
                             onClick={() => {
@@ -231,17 +209,14 @@ export const Donate = (props) => {
                             SMAZAT INZERÁT
                           </button>
                         </div> */}
-                      </td>
-                    </tr>
-                  </tbody>
-                ))}
+                        </td>
+                      </tr>
+                    </tbody>
+                  );
+                })}
               </table>
             </div>
-            <Pagination
-              postsPerPage={postsPerPage}
-              totalPosts={filteredItems.length}
-              paginate={setCurrentPage}
-            />
+            <button onClick={loadMore}>Načíst další</button>
           </>
         </div>
       </div>

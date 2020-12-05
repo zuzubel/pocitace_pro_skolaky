@@ -34,7 +34,7 @@ const App = () => {
           <Donate />
         </Route>
         <Route path="/form">
-          <Form items={[]} />
+          <Form />
         </Route>
         <Route path="/contact">
           <Contact />
