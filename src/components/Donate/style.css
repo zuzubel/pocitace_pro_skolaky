@@ -203,4 +203,7 @@
     padding-left: 25px;
     outline: none;
   }
+  .result_ads:last-child .tableRow {
+    border-bottom: none;
+  }
 }
