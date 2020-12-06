@@ -17,9 +17,9 @@ const customStyles = {
 Modal.setAppElement('#app');
 
 export const DonateForm = (props) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Matěj Petr');
   const [message, setMessage] = useState('');
-  const [emailSender, setEmailSender] = useState('');
+  const [emailSender, setEmailSender] = useState('matej@gmail.com');
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [submitting, setSubmitting] = useState(false);
