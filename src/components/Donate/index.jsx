@@ -123,7 +123,10 @@ export const Donate = (props) => {
             <div className="div__select">
               <select
                 value={selectedRegion}
-                onChange={(e) => setSelectedRegion(e.target.value)}
+                onChange={(e) => {
+                  setSelectedRegion(e.target.value);
+                  setCurrentPage(1);
+                }}
                 className="donate__form--select desktop"
                 required
               >
