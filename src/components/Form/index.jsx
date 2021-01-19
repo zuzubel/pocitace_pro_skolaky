@@ -7,19 +7,13 @@ import { regions } from '../../config.js';
 import TextareaAutosize from 'react-textarea-autosize';
 
 export const Form = () => {
-  const [school, setSchool] = useState('ZŠ Dolní');
-  const [schoolAdress, setSchoolAdress] = useState(
-    'Dlouhá 15, Praha 6, 162 00',
-  );
-  const [contact, setContact] = useState('Hana Novotná');
-  const [contactEmail, setContactEmail] = useState(
-    'pocitaceproskolaky@gmail.com',
-  );
-  const [contactTelephone, setContactTelephone] = useState('+420 737 123 456');
-  const [request, setRequest] = useState('1 notebook');
-  const [info, setInfo] = useState(
-    'Dobrý den, sháním pro dceru, která chodí do 5. třídy, funkční počítač nebo notebook. Připravuje se na přijímací zkoušky na osmileté gymnázium, její starý vypověděl službu a na nový nemáme finance. Děkuji Novotná H.',
-  );
+  const [school, setSchool] = useState('');
+  const [schoolAdress, setSchoolAdress] = useState('');
+  const [contact, setContact] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactTelephone, setContactTelephone] = useState('');
+  const [request, setRequest] = useState('');
+  const [info, setInfo] = useState('');
   const [agreement, setAgreement] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [region, setRegion] = useState('');
